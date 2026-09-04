@@ -144,3 +144,78 @@ export async function getPageCountFromPdfLib(file: File): Promise<number> {
   const doc = await PDFDocument.load(await toArrayBuffer(file))
   return doc.getPageCount()
 }
+
+/** Crops every page by inset margins (in PDF points, 72/inch). */
+export async function cropPdf(
+  file: File,
+  inset: { top: number; right: number; bottom: number; left: number },
+): Promise<Uint8Array> {
+  const doc = await PDFDocument.load(await toArrayBuffer(file))
+  for (const page of doc.getPages()) {
+    const { width, height } = page.getSize()
+    page.setCropBox(
+      inset.left,
+      inset.bottom,
+      width - inset.left - inset.right,
+      height - inset.top - inset.bottom,
+    )
+  }
+  return doc.save()
+}
+
+/** Draws a signature image onto one page at a normalized (0-1) position. */
+export async function signPdf(
+  file: File,
+  signaturePngBytes: Uint8Array,
+  opts: { pageIndex: number; xRatio: number; yRatio: number; widthRatio: number },
+): Promise<Uint8Array> {
+  const doc = await PDFDocument.load(await toArrayBuffer(file))
+  const page = doc.getPages()[opts.pageIndex]
+  const image = await doc.embedPng(signaturePngBytes)
+  const { width: pageWidth, height: pageHeight } = page.getSize()
+  const w = pageWidth * opts.widthRatio
+  const h = w * (image.height / image.width)
+  page.drawImage(image, {
+    x: pageWidth * opts.xRatio,
+    y: pageHeight * (1 - opts.yRatio) - h,
+    width: w,
+    height: h,
+  })
+  return doc.save()
+}
+
+export type PdfFormField = { name: string; type: 'text' | 'checkbox' | 'radio' | 'dropdown' | 'unsupported'; options?: string[] }
+
+export async function readPdfFormFields(file: File): Promise<PdfFormField[]> {
+  const doc = await PDFDocument.load(await toArrayBuffer(file))
+  const form = doc.getForm()
+  return form.getFields().map((field) => {
+    const name = field.getName()
+    const ctor = field.constructor.name
+    if (ctor === 'PDFTextField') return { name, type: 'text' as const }
+    if (ctor === 'PDFCheckBox') return { name, type: 'checkbox' as const }
+    if (ctor === 'PDFRadioGroup') return { name, type: 'radio' as const, options: (field as unknown as { getOptions(): string[] }).getOptions() }
+    if (ctor === 'PDFDropdown') return { name, type: 'dropdown' as const, options: (field as unknown as { getOptions(): string[] }).getOptions() }
+    return { name, type: 'unsupported' as const }
+  })
+}
+
+export async function fillPdfForm(file: File, values: Record<string, string | boolean>, flatten: boolean): Promise<Uint8Array> {
+  const doc = await PDFDocument.load(await toArrayBuffer(file))
+  const form = doc.getForm()
+  for (const [name, value] of Object.entries(values)) {
+    const field = form.getFields().find((f) => f.getName() === name)
+    if (!field) continue
+    const ctor = field.constructor.name
+    if (ctor === 'PDFTextField') (field as unknown as { setText(v: string): void }).setText(String(value))
+    else if (ctor === 'PDFCheckBox') {
+      const cb = field as unknown as { check(): void; uncheck(): void }
+      if (value) cb.check()
+      else cb.uncheck()
+    } else if (ctor === 'PDFRadioGroup' || ctor === 'PDFDropdown') {
+      ;(field as unknown as { select(v: string): void }).select(String(value))
+    }
+  }
+  if (flatten) form.flatten()
+  return doc.save()
+}

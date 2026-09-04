@@ -16,6 +16,14 @@ import ImageCompress from './pages/ImageCompress'
 import QrGenerator from './pages/QrGenerator'
 import WordCounter from './pages/WordCounter'
 import TypeMaster from './pages/TypeMaster'
+import ComparePdf from './pages/ComparePdf'
+import SignPdf from './pages/SignPdf'
+import FillForm from './pages/FillForm'
+import ExtractText from './pages/ExtractText'
+import CropPdf from './pages/CropPdf'
+import PasswordTool from './pages/PasswordTool'
+import JsonFormatter from './pages/JsonFormatter'
+import UnitConverter from './pages/UnitConverter'
 
 export default function App() {
   return (
@@ -38,6 +46,14 @@ export default function App() {
             <Route path="/qr-generator" element={<QrGenerator />} />
             <Route path="/word-counter" element={<WordCounter />} />
             <Route path="/type-master" element={<TypeMaster />} />
+            <Route path="/compare-pdf" element={<ComparePdf />} />
+            <Route path="/sign-pdf" element={<SignPdf />} />
+            <Route path="/fill-form" element={<FillForm />} />
+            <Route path="/extract-text" element={<ExtractText />} />
+            <Route path="/crop-pdf" element={<CropPdf />} />
+            <Route path="/password-tool" element={<PasswordTool />} />
+            <Route path="/json-formatter" element={<JsonFormatter />} />
+            <Route path="/unit-converter" element={<UnitConverter />} />
           </Route>
         </Routes>
       </BrowserRouter>

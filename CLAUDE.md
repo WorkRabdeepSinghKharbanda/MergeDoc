@@ -18,9 +18,12 @@ Client-side PDF tools site. Vite + React + TypeScript + React Router + Tailwind 
 
 Everything runs in the browser — there is no backend/API.
 
-- `src/lib/pdf.ts` — the only place that touches `@cantoo/pdf-lib` (a drop-in `pdf-lib` fork; same API, adds `.encrypt()`/password-load via Web Crypto). Each tool page calls one function from here (`mergePdfs`, `splitPdf`, `rotatePdf`, `compressPdf`, `imagesToPdf`, `watermarkPdf`, `setPdfMetadata`/`readPdfMetadata`, `protectPdf`/`unprotectPdf`, `reorderPdf`) plus the shared `downloadBlob` helper. New PDF operations should be added here, not inline in a page.
-- `src/lib/pdfjs.ts` — the only place that touches `pdfjs-dist`, used for anything that needs to rasterize a page to canvas: `renderPagesToImages` (PDF→JPG), `renderThumbnail` (page-reorder previews), `getPageCount`. The worker is wired via `?url` import (`pdf.worker.min.mjs?url`) — needed for Vite to bundle it correctly.
-- `src/pages/*.tsx` — one page per tool: Merge, Split, Compress, Rotate, Watermark, Protect (add/remove password, two-mode toggle), Metadata (read+edit), Reorder (thumbnail grid, move/delete pages), PdfToImage, ImageToPdf, plus non-PDF utilities ImageCompress, QrGenerator, WordCounter, TypeMaster (typing speed/WPM test), plus `Home` (landing page, split into a "PDF tools" grid and an "Other tools" grid). Each tool page owns its own file-selection state; there is no shared state/store across pages.
+- `src/lib/pdf.ts` — the only place that touches `@cantoo/pdf-lib` (a drop-in `pdf-lib` fork; same API, adds `.encrypt()`/password-load via Web Crypto). Each tool page calls one function from here (`mergePdfs`, `splitPdf`, `rotatePdf`, `compressPdf`, `imagesToPdf`, `watermarkPdf`, `setPdfMetadata`/`readPdfMetadata`, `protectPdf`/`unprotectPdf`, `reorderPdf`, `cropPdf`, `signPdf`, `readPdfFormFields`/`fillPdfForm`) plus the shared `downloadBlob` helper. New PDF operations should be added here, not inline in a page.
+- `src/lib/pdfjs.ts` — the only place that touches `pdfjs-dist`, used for anything that needs to rasterize a page to canvas or read its text layer: `renderPagesToImages` (PDF→JPG), `renderThumbnail` (page-reorder/sign-page previews), `getPageCount`, `extractPdfText` (per-page plain text, used by Compare and Extract Text). The worker is wired via `?url` import (`pdf.worker.min.mjs?url`) — needed for Vite to bundle it correctly.
+- `src/lib/diff.ts` — pure word-level LCS diff (`diffWords`), used by ComparePdf. ponytail: O(n·m) table, fine for page-sized text, not built for whole books.
+- `src/lib/password.ts` — `generatePassword` (crypto.getRandomValues-backed) and `checkPasswordStrength` (heuristic length+variety scoring, not zxcvbn-grade), used by PasswordTool.
+- `src/lib/converters.ts` — `UNIT_CATEGORIES` table + `convertUnit`, used by UnitConverter. Temperature is handled specially (not a linear factor).
+- `src/pages/*.tsx` — one page per tool: Merge, Split, Compress, Rotate, Watermark, Protect (add/remove password, two-mode toggle), Metadata (read+edit), Reorder (thumbnail grid, move/delete pages), PdfToImage, ImageToPdf, ComparePdf (word-diff between two PDFs), SignPdf (canvas-drawn signature placed via slider position, embedded as PNG), FillForm (detects AcroForm fields, renders inputs per field type, optional flatten), ExtractText (per-page text → copy/download .txt), CropPdf (margin inset in points), plus non-PDF utilities ImageCompress, QrGenerator, WordCounter, TypeMaster (typing speed/WPM test), PasswordTool (generator + strength meter), JsonFormatter (format/minify/validate), UnitConverter, plus `Home` (landing page, split into a "PDF tools" grid and an "Other tools" grid). Each tool page owns its own file-selection state; there is no shared state/store across pages.
 - `src/lib/image.ts` — canvas-based image re-encode (`compressImage`), used by `ImageCompress`. No PDF involved.
 - `src/lib/qr.ts` — thin wrapper around the `qrcode` npm package (has a browser build via its `browser` package.json field), used by `QrGenerator`.
 - `src/lib/text.ts` — pure text stats (`countText`: words/chars/sentences/paragraphs), used by `WordCounter`. No dependency.
@@ -36,6 +39,10 @@ Everything runs in the browser — there is no backend/API.
 - `index.html` — canonical URL, Open Graph/Twitter tags, and `WebApplication` JSON-LD all hardcoded here (single-page site, no per-route SSR/prerendering). `og:image` points at `/og-image.png`, which does not exist yet — add a real 1200×630 image before relying on link-preview cards.
 - `public/sitemap.xml` / `public/robots.txt` — static, hand-maintained, one `<url>` per route. Currently point at the real `https://mergedoc.vercel.app` domain — update both if the domain changes.
 - `vercel.json` — SPA rewrite (`/(.*) -> /index.html`) so direct navigation to a route like `/merge` doesn't 404 on Vercel.
+
+### sign PDF caveat
+
+`SignPdf.tsx` positions the signature via two range sliders (horizontal/vertical), not real drag-and-drop — the dashed placement box shown over the preview is visual only and doesn't respond to pointer drag. Fine for v1; a real implementation would make that box draggable and derive `xRatio`/`yRatio` from its position instead.
 
 ### compress caveat
 

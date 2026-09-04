@@ -21,6 +21,14 @@ const ICON_PATHS = {
   qr: 'M3.75 3.75h6v6h-6zm10.5 0h6v6h-6zm-10.5 10.5h6v6h-6zm10.5 3h2.25m-2.25-3h6v6h-6z',
   wordCount: 'M4 6h16M4 12h10M4 18h7',
   typeMaster: 'M6.75 7.5h10.5M6.75 12h10.5M6.75 16.5h6M3.75 3.75h16.5v16.5H3.75z',
+  compare: 'M9 4.5v15m6-15v15M4.5 9h4.5m6 0H19.5M4.5 15h4.5m6 0H19.5',
+  sign: 'M3 17.25 14.06 6.19a1.5 1.5 0 0 1 2.12 0l1.63 1.63a1.5 1.5 0 0 1 0 2.12L6.75 21H3v-3.75Z',
+  fillForm: 'M4.5 6h15M4.5 6a1.5 1.5 0 0 1 1.5-1.5h12A1.5 1.5 0 0 1 19.5 6M4.5 6v12a1.5 1.5 0 0 0 1.5 1.5h4.5m3-9h6m-6 3.75h6m-6 3.75h3',
+  extractText: 'M9 12h6m-6 3.75h4.5M9 8.25h6M6 4.5h12A1.5 1.5 0 0 1 19.5 6v12a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 18V6A1.5 1.5 0 0 1 6 4.5Z',
+  crop: 'M6 3v13.5A1.5 1.5 0 0 0 7.5 18H21M3 6h13.5A1.5 1.5 0 0 1 18 7.5V21',
+  passwordGen: 'M12 3.75c-3.5 0-6 1.5-6 1.5v6c0 4.5 3 8.25 6 9 3-.75 6-4.5 6-9v-6s-2.5-1.5-6-1.5Zm0 4.5v3m-2 2h4',
+  json: 'M9.75 3.75c-1.5 0-2.25.75-2.25 2.25v3c0 1.2-.6 1.8-1.8 1.8H5.25v1.4h.45c1.2 0 1.8.6 1.8 1.8v3c0 1.5.75 2.25 2.25 2.25M14.25 3.75c1.5 0 2.25.75 2.25 2.25v3c0 1.2.6 1.8 1.8 1.8h.45v1.4h-.45c-1.2 0-1.8.6-1.8 1.8v3c0 1.5-.75 2.25-2.25 2.25',
+  unitConvert: 'M7.5 3.75 3.75 7.5m0 0L7.5 11.25M3.75 7.5h16.5m-4.5 5.25 3.75 3.75m0 0-3.75 3.75m3.75-3.75H3.75',
 }
 
 export const PDF_TOOLS: Tool[] = [
@@ -34,6 +42,11 @@ export const PDF_TOOLS: Tool[] = [
   { to: '/reorder', title: 'Reorder Pages', description: 'Visually reorder or delete pages, then save.', icon: ICON_PATHS.reorder },
   { to: '/pdf-to-image', title: 'PDF to Image', description: 'Convert every page of a PDF into a JPG image.', icon: ICON_PATHS.pdfToImage },
   { to: '/image-to-pdf', title: 'Image to PDF', description: 'Combine JPG or PNG images into a single PDF.', icon: ICON_PATHS.imageToPdf },
+  { to: '/compare-pdf', title: 'Compare PDFs', description: 'See word-level differences between two PDFs.', icon: ICON_PATHS.compare },
+  { to: '/sign-pdf', title: 'Sign PDF', description: 'Draw a signature and place it on a page.', icon: ICON_PATHS.sign },
+  { to: '/fill-form', title: 'Fill PDF Form', description: 'Fill in a PDF form’s fields and download it.', icon: ICON_PATHS.fillForm },
+  { to: '/extract-text', title: 'Extract Text', description: 'Pull the plain text out of a PDF.', icon: ICON_PATHS.extractText },
+  { to: '/crop-pdf', title: 'Crop PDF', description: 'Trim margins from every page.', icon: ICON_PATHS.crop },
 ]
 
 export const OTHER_TOOLS: Tool[] = [
@@ -41,4 +54,7 @@ export const OTHER_TOOLS: Tool[] = [
   { to: '/qr-generator', title: 'QR Code Generator', description: 'Turn any text or URL into a QR code.', icon: ICON_PATHS.qr },
   { to: '/word-counter', title: 'Word Counter', description: 'Count words, characters, sentences, and paragraphs.', icon: ICON_PATHS.wordCount },
   { to: '/type-master', title: 'Type Master', description: 'Test your typing speed and accuracy in words per minute.', icon: ICON_PATHS.typeMaster },
+  { to: '/password-tool', title: 'Password Generator', description: 'Generate strong passwords and check password strength.', icon: ICON_PATHS.passwordGen },
+  { to: '/json-formatter', title: 'JSON Formatter', description: 'Format, validate, and minify JSON.', icon: ICON_PATHS.json },
+  { to: '/unit-converter', title: 'Unit Converter', description: 'Convert length, weight, temperature, and data units.', icon: ICON_PATHS.unitConvert },
 ]
