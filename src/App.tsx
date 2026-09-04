@@ -40,6 +40,14 @@ import RegexTester from './pages/RegexTester'
 import ImageResizer from './pages/ImageResizer'
 import MarkdownPreview from './pages/MarkdownPreview'
 import MetaTagGenerator from './pages/MetaTagGenerator'
+import BmiCalculator from './pages/BmiCalculator'
+import PercentageCalculator from './pages/PercentageCalculator'
+import TipCalculator from './pages/TipCalculator'
+import AgeCalculator from './pages/AgeCalculator'
+import NumberBaseConverter from './pages/NumberBaseConverter'
+import TextEncryptor from './pages/TextEncryptor'
+import TextToSpeech from './pages/TextToSpeech'
+import SlugGenerator from './pages/SlugGenerator'
 
 export default function App() {
   return (
@@ -86,6 +94,14 @@ export default function App() {
             <Route path="/image-resize" element={<ImageResizer />} />
             <Route path="/markdown-preview" element={<MarkdownPreview />} />
             <Route path="/meta-tag-generator" element={<MetaTagGenerator />} />
+            <Route path="/bmi-calculator" element={<BmiCalculator />} />
+            <Route path="/percentage-calculator" element={<PercentageCalculator />} />
+            <Route path="/tip-calculator" element={<TipCalculator />} />
+            <Route path="/age-calculator" element={<AgeCalculator />} />
+            <Route path="/number-base-converter" element={<NumberBaseConverter />} />
+            <Route path="/text-encryptor" element={<TextEncryptor />} />
+            <Route path="/text-to-speech" element={<TextToSpeech />} />
+            <Route path="/slug-generator" element={<SlugGenerator />} />
           </Route>
         </Routes>
       </BrowserRouter>
