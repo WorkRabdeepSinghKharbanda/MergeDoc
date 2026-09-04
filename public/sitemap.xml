@@ -39,4 +39,12 @@
   <url><loc>https://mergedoc.vercel.app/image-resize</loc><priority>0.7</priority></url>
   <url><loc>https://mergedoc.vercel.app/markdown-preview</loc><priority>0.7</priority></url>
   <url><loc>https://mergedoc.vercel.app/meta-tag-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/bmi-calculator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/percentage-calculator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/tip-calculator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/age-calculator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/number-base-converter</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/text-encryptor</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/text-to-speech</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/slug-generator</loc><priority>0.7</priority></url>
 </urlset>

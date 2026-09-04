@@ -45,6 +45,14 @@ const ICON_PATHS = {
   resize: 'M4.5 4.5h6v6h-6zm9 9h6v6h-6zM4.5 19.5l4.5-4.5m10.5-10.5-4.5 4.5',
   markdown: 'M4.5 4.5h15v15h-15zM7.5 15V9l3 3 3-3v6m2.25-3h1.5',
   metaTag: 'M6 4.5h12A1.5 1.5 0 0 1 19.5 6v12a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 18V6A1.5 1.5 0 0 1 6 4.5Zm3 6h6m-6 3.75h4',
+  bmi: 'M12 3.75c-4.5 0-8.25 3.75-8.25 8.25S7.5 20.25 12 20.25 20.25 16.5 20.25 12A8.25 8.25 0 0 0 12 3.75Zm0 4.5v3.75l2.25 2.25',
+  percentage: 'M6 6h.008v.008H6V6Zm12 12h.008v.008H18V18ZM6.75 17.25 17.25 6.75',
+  tip: 'M12 6.75c-3.5 0-6 2.25-6 5.25s2.5 5.25 6 5.25 6-2.25 6-5.25-2.5-5.25-6-5.25Zm0 0V4.5m-2.25 9.75h4.5',
+  age: 'M6.75 3v3m10.5-3v3M4.5 8.25h15M5.25 6h13.5A1.5 1.5 0 0 1 20.25 7.5v12a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-12A1.5 1.5 0 0 1 5.25 6Z',
+  numberBase: 'M4.5 4.5h4.5v4.5h-4.5zm10.5 0h4.5v4.5h-4.5zm-10.5 10.5h4.5v4.5h-4.5zm10.5 0h4.5v4.5h-4.5z',
+  encrypt: 'M12 3.75c-3.5 0-6 1.5-6 1.5v6c0 4.5 3 8.25 6 9 3-.75 6-4.5 6-9v-6s-2.5-1.5-6-1.5Zm-2.25 8.25 1.5 1.5 3-3',
+  speech: 'M8.25 4.5a3.75 3.75 0 0 1 7.5 0v6a3.75 3.75 0 0 1-7.5 0v-6ZM5.25 10.5v.75a6.75 6.75 0 0 0 13.5 0v-.75M12 18v3',
+  slug: 'M13.5 4.5 21 12l-7.5 7.5M10.5 4.5 3 12l7.5 7.5',
 }
 
 export const PDF_TOOLS: Tool[] = [
@@ -89,4 +97,12 @@ export const OTHER_TOOLS: Tool[] = [
   { to: '/image-resize', title: 'Image Resizer', description: 'Resize a JPG or PNG to exact dimensions.', icon: ICON_PATHS.resize },
   { to: '/markdown-preview', title: 'Markdown Previewer', description: 'Preview Markdown rendered as HTML live.', icon: ICON_PATHS.markdown },
   { to: '/meta-tag-generator', title: 'Meta Tag Generator', description: 'Generate SEO and Open Graph meta tags with a live preview.', icon: ICON_PATHS.metaTag },
+  { to: '/bmi-calculator', title: 'BMI Calculator', description: 'Calculate your Body Mass Index from height and weight.', icon: ICON_PATHS.bmi },
+  { to: '/percentage-calculator', title: 'Percentage Calculator', description: 'Calculate percentages, percentage change, and percentage of a value.', icon: ICON_PATHS.percentage },
+  { to: '/tip-calculator', title: 'Tip Calculator', description: 'Calculate tip amount and split the bill.', icon: ICON_PATHS.tip },
+  { to: '/age-calculator', title: 'Age Calculator', description: 'Calculate exact age and days to your next birthday.', icon: ICON_PATHS.age },
+  { to: '/number-base-converter', title: 'Number Base Converter', description: 'Convert numbers between binary, octal, decimal, and hex.', icon: ICON_PATHS.numberBase },
+  { to: '/text-encryptor', title: 'Text Encryptor', description: 'Encrypt or decrypt text with a passphrase (AES-256-GCM).', icon: ICON_PATHS.encrypt },
+  { to: '/text-to-speech', title: 'Text to Speech', description: 'Have your browser read typed text aloud.', icon: ICON_PATHS.speech },
+  { to: '/slug-generator', title: 'Slug Generator', description: 'Turn a title into a clean URL slug.', icon: ICON_PATHS.slug },
 ]
