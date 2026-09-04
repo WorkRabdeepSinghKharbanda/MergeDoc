@@ -31,4 +31,12 @@
   <url><loc>https://mergedoc.vercel.app/hash-generator</loc><priority>0.7</priority></url>
   <url><loc>https://mergedoc.vercel.app/timestamp-converter</loc><priority>0.7</priority></url>
   <url><loc>https://mergedoc.vercel.app/csv-json-converter</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/text-diff</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/color-tool</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/uuid-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/lorem-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/regex-tester</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/image-resize</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/markdown-preview</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/meta-tag-generator</loc><priority>0.7</priority></url>
 </urlset>
