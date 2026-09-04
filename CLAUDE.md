@@ -29,7 +29,9 @@ Everything runs in the browser — there is no backend/API.
 - `src/components/ThemeToggle.tsx` — light/dark toggle; persists to `localStorage['theme']`. The initial class is set by an inline script in `index.html` `<head>` (before React mounts) to avoid a flash of the wrong theme.
 - `src/lib/useDocumentMeta.ts` — sets `document.title` + the meta-description tag per page (no router-integrated head library; this is deliberately minimal since it's a small, fixed set of routes).
 - `src/components/AdSlot.tsx` — placeholder ad slot (dashed box). Swap its inner div for a real ad network embed (e.g. AdSense `<ins>`) when a publisher ID exists.
-- `src/components/Layout.tsx` — the router's persistent shell (logo, "All tools" link to `/#tools`, theme toggle, footer) via `<Outlet />`.
+- `src/lib/tools.ts` — the single source of truth for the tool list (`PDF_TOOLS`, `OTHER_TOOLS`: to/title/description/icon path). `Home.tsx` and `NavHeader.tsx` both read from here — add a new tool here once, not in both places.
+- `src/components/NavHeader.tsx` — the nav bar: two dropdown menus (PDF Tools / Other Tools, click-outside-to-close) on desktop, a slide-down link list behind a hamburger on mobile (`sm:` breakpoint).
+- `src/components/Layout.tsx` — the router's persistent shell (`NavHeader` + footer) via `<Outlet />`.
 - `src/App.tsx` — route table; adding a new tool means adding a page component here and a route.
 - `index.html` — canonical URL, Open Graph/Twitter tags, and `WebApplication` JSON-LD all hardcoded here (single-page site, no per-route SSR/prerendering). `og:image` points at `/og-image.png`, which does not exist yet — add a real 1200×630 image before relying on link-preview cards.
 - `public/sitemap.xml` / `public/robots.txt` — static, hand-maintained, one `<url>` per route. Currently point at the real `https://mergedoc.vercel.app` domain — update both if the domain changes.
