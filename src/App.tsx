@@ -24,6 +24,14 @@ import CropPdf from './pages/CropPdf'
 import PasswordTool from './pages/PasswordTool'
 import JsonFormatter from './pages/JsonFormatter'
 import UnitConverter from './pages/UnitConverter'
+import AddPageNumbers from './pages/AddPageNumbers'
+import TextToPdf from './pages/TextToPdf'
+import Base64Tool from './pages/Base64Tool'
+import UrlEncoder from './pages/UrlEncoder'
+import CaseConverter from './pages/CaseConverter'
+import HashGenerator from './pages/HashGenerator'
+import TimestampConverter from './pages/TimestampConverter'
+import CsvJsonConverter from './pages/CsvJsonConverter'
 
 export default function App() {
   return (
@@ -54,6 +62,14 @@ export default function App() {
             <Route path="/password-tool" element={<PasswordTool />} />
             <Route path="/json-formatter" element={<JsonFormatter />} />
             <Route path="/unit-converter" element={<UnitConverter />} />
+            <Route path="/add-page-numbers" element={<AddPageNumbers />} />
+            <Route path="/text-to-pdf" element={<TextToPdf />} />
+            <Route path="/base64-tool" element={<Base64Tool />} />
+            <Route path="/url-encoder" element={<UrlEncoder />} />
+            <Route path="/case-converter" element={<CaseConverter />} />
+            <Route path="/hash-generator" element={<HashGenerator />} />
+            <Route path="/timestamp-converter" element={<TimestampConverter />} />
+            <Route path="/csv-json-converter" element={<CsvJsonConverter />} />
           </Route>
         </Routes>
       </BrowserRouter>

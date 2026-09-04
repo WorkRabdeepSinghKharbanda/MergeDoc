@@ -219,3 +219,58 @@ export async function fillPdfForm(file: File, values: Record<string, string | bo
   if (flatten) form.flatten()
   return doc.save()
 }
+
+export async function addPageNumbers(
+  file: File,
+  opts: { position: 'bottom-center' | 'bottom-right' | 'bottom-left'; startAt: number } = { position: 'bottom-center', startAt: 1 },
+): Promise<Uint8Array> {
+  const doc = await PDFDocument.load(await toArrayBuffer(file))
+  const font = await doc.embedFont(StandardFonts.Helvetica)
+  const fontSize = 10
+  const margin = 24
+  doc.getPages().forEach((page, i) => {
+    const label = String(opts.startAt + i)
+    const { width } = page.getSize()
+    const textWidth = font.widthOfTextAtSize(label, fontSize)
+    const x = opts.position === 'bottom-left' ? margin : opts.position === 'bottom-right' ? width - margin - textWidth : width / 2 - textWidth / 2
+    page.drawText(label, { x, y: margin / 2, size: fontSize, font, color: rgb(0.3, 0.3, 0.3) })
+  })
+  return doc.save()
+}
+
+/** Builds a simple multi-page PDF from plain text, wrapping at word boundaries. */
+export async function textToPdf(text: string): Promise<Uint8Array> {
+  const doc = await PDFDocument.create()
+  const font = await doc.embedFont(StandardFonts.Helvetica)
+  const fontSize = 11
+  const lineHeight = fontSize * 1.4
+  const pageWidth = 612
+  const pageHeight = 792
+  const margin = 50
+  const maxWidth = pageWidth - margin * 2
+
+  const lines: string[] = []
+  for (const paragraph of text.split('\n')) {
+    let current = ''
+    for (const word of paragraph.split(' ')) {
+      const candidate = current ? `${current} ${word}` : word
+      if (font.widthOfTextAtSize(candidate, fontSize) > maxWidth && current) {
+        lines.push(current)
+        current = word
+      } else {
+        current = candidate
+      }
+    }
+    lines.push(current)
+  }
+
+  const linesPerPage = Math.floor((pageHeight - margin * 2) / lineHeight)
+  for (let i = 0; i < lines.length; i += linesPerPage) {
+    const page = doc.addPage([pageWidth, pageHeight])
+    const chunk = lines.slice(i, i + linesPerPage)
+    chunk.forEach((line, row) => {
+      page.drawText(line, { x: margin, y: pageHeight - margin - row * lineHeight, size: fontSize, font })
+    })
+  }
+  return doc.save()
+}
