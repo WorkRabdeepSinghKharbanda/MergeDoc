@@ -53,6 +53,14 @@ const ICON_PATHS = {
   encrypt: 'M12 3.75c-3.5 0-6 1.5-6 1.5v6c0 4.5 3 8.25 6 9 3-.75 6-4.5 6-9v-6s-2.5-1.5-6-1.5Zm-2.25 8.25 1.5 1.5 3-3',
   speech: 'M8.25 4.5a3.75 3.75 0 0 1 7.5 0v6a3.75 3.75 0 0 1-7.5 0v-6ZM5.25 10.5v.75a6.75 6.75 0 0 0 13.5 0v-.75M12 18v3',
   slug: 'M13.5 4.5 21 12l-7.5 7.5M10.5 4.5 3 12l7.5 7.5',
+  favicon: 'M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z',
+  qrBatch: 'M3.75 3.75h6v6h-6zm10.5 0h6v6h-6zm-10.5 10.5h6v6h-6zm10.5 3h2.25m-2.25-3h6v6h-6z',
+  loan: 'M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z',
+  discount: 'M9 8.25h.008v.008H9V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM15 15.75h.008v.008H15v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM4.5 4.5h9l6 6-9 9-6-6v-9Z',
+  gpa: 'M12 3 2.25 8.25 12 13.5l7.5-4.125V16.5m-15-6v5.25c0 .75 3 3 7.5 3s7.5-2.25 7.5-3v-5.25',
+  countdown: 'M12 6v6l4 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z',
+  teamGen: 'M15 19.128a9.4 9.4 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z',
+  textSort: 'M3 4.5h11.25M3 9h7.5M3 13.5h6m9.75-8.25L18 9.75M17.25 5.25v13.5',
 }
 
 export const PDF_TOOLS: Tool[] = [
@@ -105,4 +113,12 @@ export const OTHER_TOOLS: Tool[] = [
   { to: '/text-encryptor', title: 'Text Encryptor', description: 'Encrypt or decrypt text with a passphrase (AES-256-GCM).', icon: ICON_PATHS.encrypt },
   { to: '/text-to-speech', title: 'Text to Speech', description: 'Have your browser read typed text aloud.', icon: ICON_PATHS.speech },
   { to: '/slug-generator', title: 'Slug Generator', description: 'Turn a title into a clean URL slug.', icon: ICON_PATHS.slug },
+  { to: '/favicon-generator', title: 'Favicon Generator', description: 'Generate favicon PNGs in every common size from one image.', icon: ICON_PATHS.favicon },
+  { to: '/qr-batch-generator', title: 'Batch QR Code Generator', description: 'Generate multiple QR codes from a list of text or URLs.', icon: ICON_PATHS.qrBatch },
+  { to: '/loan-calculator', title: 'Loan & EMI Calculator', description: 'Calculate your monthly loan payment and total interest.', icon: ICON_PATHS.loan },
+  { to: '/discount-calculator', title: 'Discount Calculator', description: 'Calculate the sale price after a percentage discount.', icon: ICON_PATHS.discount },
+  { to: '/gpa-calculator', title: 'GPA Calculator', description: 'Calculate your grade point average from grades and credits.', icon: ICON_PATHS.gpa },
+  { to: '/countdown-stopwatch', title: 'Countdown Timer & Stopwatch', description: 'A simple countdown timer and stopwatch.', icon: ICON_PATHS.countdown },
+  { to: '/team-generator', title: 'Random Team Generator', description: 'Split a list of names into random, balanced teams.', icon: ICON_PATHS.teamGen },
+  { to: '/text-sorter', title: 'Text Line Sorter', description: 'Sort, deduplicate, and clean up a list of lines.', icon: ICON_PATHS.textSort },
 ]
