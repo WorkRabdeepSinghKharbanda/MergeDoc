@@ -16,6 +16,8 @@
   <url><loc>https://mergedoc.vercel.app/fill-form</loc><priority>0.8</priority></url>
   <url><loc>https://mergedoc.vercel.app/extract-text</loc><priority>0.8</priority></url>
   <url><loc>https://mergedoc.vercel.app/crop-pdf</loc><priority>0.8</priority></url>
+  <url><loc>https://mergedoc.vercel.app/add-page-numbers</loc><priority>0.8</priority></url>
+  <url><loc>https://mergedoc.vercel.app/text-to-pdf</loc><priority>0.8</priority></url>
   <url><loc>https://mergedoc.vercel.app/image-compress</loc><priority>0.8</priority></url>
   <url><loc>https://mergedoc.vercel.app/qr-generator</loc><priority>0.8</priority></url>
   <url><loc>https://mergedoc.vercel.app/word-counter</loc><priority>0.7</priority></url>
@@ -23,4 +25,10 @@
   <url><loc>https://mergedoc.vercel.app/password-tool</loc><priority>0.7</priority></url>
   <url><loc>https://mergedoc.vercel.app/json-formatter</loc><priority>0.7</priority></url>
   <url><loc>https://mergedoc.vercel.app/unit-converter</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/base64-tool</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/url-encoder</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/case-converter</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/hash-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/timestamp-converter</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/csv-json-converter</loc><priority>0.7</priority></url>
 </urlset>

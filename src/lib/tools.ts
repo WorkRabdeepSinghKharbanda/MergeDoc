@@ -29,6 +29,14 @@ const ICON_PATHS = {
   passwordGen: 'M12 3.75c-3.5 0-6 1.5-6 1.5v6c0 4.5 3 8.25 6 9 3-.75 6-4.5 6-9v-6s-2.5-1.5-6-1.5Zm0 4.5v3m-2 2h4',
   json: 'M9.75 3.75c-1.5 0-2.25.75-2.25 2.25v3c0 1.2-.6 1.8-1.8 1.8H5.25v1.4h.45c1.2 0 1.8.6 1.8 1.8v3c0 1.5.75 2.25 2.25 2.25M14.25 3.75c1.5 0 2.25.75 2.25 2.25v3c0 1.2.6 1.8 1.8 1.8h.45v1.4h-.45c-1.2 0-1.8.6-1.8 1.8v3c0 1.5-.75 2.25-2.25 2.25',
   unitConvert: 'M7.5 3.75 3.75 7.5m0 0L7.5 11.25M3.75 7.5h16.5m-4.5 5.25 3.75 3.75m0 0-3.75 3.75m3.75-3.75H3.75',
+  pageNumbers: 'M6 4.5h12A1.5 1.5 0 0 1 19.5 6v12a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 18V6A1.5 1.5 0 0 1 6 4.5Zm4.5 15v-3h3v3',
+  textToPdf: 'M9 12h6m-6 3.75h4.5M6 4.5h9l4.5 4.5V19.5A1.5 1.5 0 0 1 18 21H6a1.5 1.5 0 0 1-1.5-1.5V6A1.5 1.5 0 0 1 6 4.5Z',
+  base64: 'M4.5 12h15m-15 0 3-3m-3 3 3 3m8.25-6 3 3-3 3',
+  urlEncode: 'M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 3L21 3m0 0h-5.25M21 3v5.25',
+  caseConvert: 'M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.25-6v13.5m-3.75 0h7.5',
+  hash: 'M5.25 4.5 6.75 19.5m6-15-1.5 15M3.75 9h16.5M3 15h16.5',
+  timestamp: 'M12 6v6l4 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z',
+  csvJson: 'M8.25 4.5 5.25 7.5m0 0 3 3m-3-3h13.5m-4.5 6-3 3m0 0 3 3m-3-3h13.5',
 }
 
 export const PDF_TOOLS: Tool[] = [
@@ -47,6 +55,8 @@ export const PDF_TOOLS: Tool[] = [
   { to: '/fill-form', title: 'Fill PDF Form', description: 'Fill in a PDF form’s fields and download it.', icon: ICON_PATHS.fillForm },
   { to: '/extract-text', title: 'Extract Text', description: 'Pull the plain text out of a PDF.', icon: ICON_PATHS.extractText },
   { to: '/crop-pdf', title: 'Crop PDF', description: 'Trim margins from every page.', icon: ICON_PATHS.crop },
+  { to: '/add-page-numbers', title: 'Add Page Numbers', description: 'Stamp page numbers onto every page.', icon: ICON_PATHS.pageNumbers },
+  { to: '/text-to-pdf', title: 'Text to PDF', description: 'Turn plain text into a downloadable PDF.', icon: ICON_PATHS.textToPdf },
 ]
 
 export const OTHER_TOOLS: Tool[] = [
@@ -57,4 +67,10 @@ export const OTHER_TOOLS: Tool[] = [
   { to: '/password-tool', title: 'Password Generator', description: 'Generate strong passwords and check password strength.', icon: ICON_PATHS.passwordGen },
   { to: '/json-formatter', title: 'JSON Formatter', description: 'Format, validate, and minify JSON.', icon: ICON_PATHS.json },
   { to: '/unit-converter', title: 'Unit Converter', description: 'Convert length, weight, temperature, and data units.', icon: ICON_PATHS.unitConvert },
+  { to: '/base64-tool', title: 'Base64 Encoder/Decoder', description: 'Encode or decode Base64 text.', icon: ICON_PATHS.base64 },
+  { to: '/url-encoder', title: 'URL Encoder/Decoder', description: 'Encode or decode URL components.', icon: ICON_PATHS.urlEncode },
+  { to: '/case-converter', title: 'Case Converter', description: 'Convert text between UPPERCASE, Title Case, camelCase, and more.', icon: ICON_PATHS.caseConvert },
+  { to: '/hash-generator', title: 'Hash Generator', description: 'Generate SHA-1/256/384/512 hashes of text.', icon: ICON_PATHS.hash },
+  { to: '/timestamp-converter', title: 'Timestamp Converter', description: 'Convert Unix epoch time to and from a readable date.', icon: ICON_PATHS.timestamp },
+  { to: '/csv-json-converter', title: 'CSV ⇄ JSON Converter', description: 'Convert CSV to JSON or JSON to CSV.', icon: ICON_PATHS.csvJson },
 ]
