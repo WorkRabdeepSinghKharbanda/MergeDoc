@@ -37,6 +37,14 @@ const ICON_PATHS = {
   hash: 'M5.25 4.5 6.75 19.5m6-15-1.5 15M3.75 9h16.5M3 15h16.5',
   timestamp: 'M12 6v6l4 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z',
   csvJson: 'M8.25 4.5 5.25 7.5m0 0 3 3m-3-3h13.5m-4.5 6-3 3m0 0 3 3m-3-3h13.5',
+  textDiff: 'M9 4.5v15m6-15v15M4.5 9h4.5m6 0H19.5M4.5 15h4.5m6 0H19.5',
+  color: 'M12 3.75c-4.5 0-8.25 3.75-8.25 8.25S7.5 20.25 12 20.25 20.25 16.5 20.25 12A8.25 8.25 0 0 0 12 3.75Zm0 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3',
+  uuid: 'M9.75 3.75h4.5M4.5 6.75V19.5A1.5 1.5 0 0 0 6 21h12a1.5 1.5 0 0 0 1.5-1.5V6.75M4.5 6.75h15M4.5 6.75l1.5-3h12l1.5 3',
+  lorem: 'M4 6h16M4 12h16M4 18h10',
+  regex: 'M9.75 3.75 5.25 12l4.5 8.25M14.25 3.75 18.75 12l-4.5 8.25',
+  resize: 'M4.5 4.5h6v6h-6zm9 9h6v6h-6zM4.5 19.5l4.5-4.5m10.5-10.5-4.5 4.5',
+  markdown: 'M4.5 4.5h15v15h-15zM7.5 15V9l3 3 3-3v6m2.25-3h1.5',
+  metaTag: 'M6 4.5h12A1.5 1.5 0 0 1 19.5 6v12a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 18V6A1.5 1.5 0 0 1 6 4.5Zm3 6h6m-6 3.75h4',
 }
 
 export const PDF_TOOLS: Tool[] = [
@@ -73,4 +81,12 @@ export const OTHER_TOOLS: Tool[] = [
   { to: '/hash-generator', title: 'Hash Generator', description: 'Generate SHA-1/256/384/512 hashes of text.', icon: ICON_PATHS.hash },
   { to: '/timestamp-converter', title: 'Timestamp Converter', description: 'Convert Unix epoch time to and from a readable date.', icon: ICON_PATHS.timestamp },
   { to: '/csv-json-converter', title: 'CSV ⇄ JSON Converter', description: 'Convert CSV to JSON or JSON to CSV.', icon: ICON_PATHS.csvJson },
+  { to: '/text-diff', title: 'Text Diff Checker', description: 'Compare two texts and see word-level differences.', icon: ICON_PATHS.textDiff },
+  { to: '/color-tool', title: 'Color Converter', description: 'Convert HEX/RGB/HSL and check WCAG contrast ratios.', icon: ICON_PATHS.color },
+  { to: '/uuid-generator', title: 'UUID Generator', description: 'Generate random UUID v4 identifiers.', icon: ICON_PATHS.uuid },
+  { to: '/lorem-generator', title: 'Lorem Ipsum Generator', description: 'Generate placeholder text for mockups.', icon: ICON_PATHS.lorem },
+  { to: '/regex-tester', title: 'Regex Tester', description: 'Test a regular expression against sample text.', icon: ICON_PATHS.regex },
+  { to: '/image-resize', title: 'Image Resizer', description: 'Resize a JPG or PNG to exact dimensions.', icon: ICON_PATHS.resize },
+  { to: '/markdown-preview', title: 'Markdown Previewer', description: 'Preview Markdown rendered as HTML live.', icon: ICON_PATHS.markdown },
+  { to: '/meta-tag-generator', title: 'Meta Tag Generator', description: 'Generate SEO and Open Graph meta tags with a live preview.', icon: ICON_PATHS.metaTag },
 ]

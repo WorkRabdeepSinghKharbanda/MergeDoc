@@ -1,3 +1,31 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+.markdown-preview h1,
+.markdown-preview h2,
+.markdown-preview h3 {
+  font-weight: 700;
+  margin: 0.75em 0 0.25em;
+}
+.markdown-preview p {
+  margin: 0.5em 0;
+}
+.markdown-preview ul {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+  list-style: disc;
+}
+.markdown-preview a {
+  color: rgb(79 70 229);
+  text-decoration: underline;
+}
+.markdown-preview code {
+  background: rgb(241 245 249);
+  border-radius: 0.25em;
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+}
+.dark .markdown-preview code {
+  background: rgb(30 41 59);
+}

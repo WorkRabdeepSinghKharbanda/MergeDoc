@@ -32,6 +32,14 @@ import CaseConverter from './pages/CaseConverter'
 import HashGenerator from './pages/HashGenerator'
 import TimestampConverter from './pages/TimestampConverter'
 import CsvJsonConverter from './pages/CsvJsonConverter'
+import TextDiff from './pages/TextDiff'
+import ColorTool from './pages/ColorTool'
+import UuidGenerator from './pages/UuidGenerator'
+import LoremGenerator from './pages/LoremGenerator'
+import RegexTester from './pages/RegexTester'
+import ImageResizer from './pages/ImageResizer'
+import MarkdownPreview from './pages/MarkdownPreview'
+import MetaTagGenerator from './pages/MetaTagGenerator'
 
 export default function App() {
   return (
@@ -70,6 +78,14 @@ export default function App() {
             <Route path="/hash-generator" element={<HashGenerator />} />
             <Route path="/timestamp-converter" element={<TimestampConverter />} />
             <Route path="/csv-json-converter" element={<CsvJsonConverter />} />
+            <Route path="/text-diff" element={<TextDiff />} />
+            <Route path="/color-tool" element={<ColorTool />} />
+            <Route path="/uuid-generator" element={<UuidGenerator />} />
+            <Route path="/lorem-generator" element={<LoremGenerator />} />
+            <Route path="/regex-tester" element={<RegexTester />} />
+            <Route path="/image-resize" element={<ImageResizer />} />
+            <Route path="/markdown-preview" element={<MarkdownPreview />} />
+            <Route path="/meta-tag-generator" element={<MetaTagGenerator />} />
           </Route>
         </Routes>
       </BrowserRouter>

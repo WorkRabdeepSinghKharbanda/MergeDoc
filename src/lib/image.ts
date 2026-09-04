@@ -36,3 +36,17 @@ export async function compressImage(
     canvas.toBlob((blob) => (blob ? resolve(blob) : reject(new Error('toBlob failed'))), 'image/jpeg', quality),
   )
 }
+
+/** Resizes an image to exact dimensions via canvas, preserving format where supported. */
+export async function resizeImage(file: File, width: number, height: number): Promise<Blob> {
+  const img = await loadImage(file)
+  const canvas = document.createElement('canvas')
+  canvas.width = width
+  canvas.height = height
+  const ctx = canvas.getContext('2d')!
+  ctx.drawImage(img, 0, 0, width, height)
+  const isPng = file.type === 'image/png'
+  return new Promise((resolve, reject) =>
+    canvas.toBlob((blob) => (blob ? resolve(blob) : reject(new Error('toBlob failed'))), isPng ? 'image/png' : 'image/jpeg', 0.92),
+  )
+}
