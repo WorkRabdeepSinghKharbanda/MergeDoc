@@ -50,3 +50,15 @@ export async function getPageCount(file: File): Promise<number> {
   const doc = await loadPdfDocument(file)
   return doc.numPages
 }
+
+/** Extracts plain text per page. */
+export async function extractPdfText(file: File): Promise<string[]> {
+  const doc = await loadPdfDocument(file)
+  const pages: string[] = []
+  for (let i = 1; i <= doc.numPages; i++) {
+    const page = await doc.getPage(i)
+    const content = await page.getTextContent()
+    pages.push(content.items.map((item) => ('str' in item ? item.str : '')).join(' '))
+  }
+  return pages
+}
