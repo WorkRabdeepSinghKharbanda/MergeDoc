@@ -80,6 +80,14 @@ import MorseCodeTranslator from './pages/MorseCodeTranslator'
 import AsciiArtGenerator from './pages/AsciiArtGenerator'
 import ColorPaletteExtractor from './pages/ColorPaletteExtractor'
 import WordFrequencyAnalyzer from './pages/WordFrequencyAnalyzer'
+import TodoList from './pages/TodoList'
+import Scratchpad from './pages/Scratchpad'
+import CountdownToDate from './pages/CountdownToDate'
+import BillSplitter from './pages/BillSplitter'
+import DecisionWheel from './pages/DecisionWheel'
+import MarkdownTableGenerator from './pages/MarkdownTableGenerator'
+import DiceRoller from './pages/DiceRoller'
+import RandomNumberGenerator from './pages/RandomNumberGenerator'
 
 export default function App() {
   return (
@@ -166,6 +174,14 @@ export default function App() {
             <Route path="/ascii-art-generator" element={<AsciiArtGenerator />} />
             <Route path="/color-palette-extractor" element={<ColorPaletteExtractor />} />
             <Route path="/word-frequency-analyzer" element={<WordFrequencyAnalyzer />} />
+            <Route path="/todo-list" element={<TodoList />} />
+            <Route path="/scratchpad" element={<Scratchpad />} />
+            <Route path="/countdown-to-date" element={<CountdownToDate />} />
+            <Route path="/bill-splitter" element={<BillSplitter />} />
+            <Route path="/decision-wheel" element={<DecisionWheel />} />
+            <Route path="/markdown-table-generator" element={<MarkdownTableGenerator />} />
+            <Route path="/dice-roller" element={<DiceRoller />} />
+            <Route path="/random-number-generator" element={<RandomNumberGenerator />} />
           </Route>
         </Routes>
       </BrowserRouter>

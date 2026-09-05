@@ -79,4 +79,12 @@
   <url><loc>https://mergedoc.vercel.app/ascii-art-generator</loc><priority>0.7</priority></url>
   <url><loc>https://mergedoc.vercel.app/color-palette-extractor</loc><priority>0.7</priority></url>
   <url><loc>https://mergedoc.vercel.app/word-frequency-analyzer</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/todo-list</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/scratchpad</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/countdown-to-date</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/bill-splitter</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/decision-wheel</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/markdown-table-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/dice-roller</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/random-number-generator</loc><priority>0.7</priority></url>
 </urlset>
