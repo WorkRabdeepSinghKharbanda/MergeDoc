@@ -77,6 +77,14 @@ const ICON_PATHS = {
   placeholderImage: 'M3.75 4.5h16.5v15H3.75zM3.75 15l4.5-4.5 3 3 5.25-5.25 3.75 3.75M9 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z',
   subnet: 'M8.25 3.75h7.5v4.5h-7.5zM4.5 15.75h4.5v4.5h-4.5zm7.5 0h4.5v4.5h-4.5zm7.5 0h-4.5m-9 0H4.5M12 8.25v3m0 4.5v-4.5m3-4.5v4.5m-6-4.5v4.5',
   redact: 'M6 4.5h12A1.5 1.5 0 0 1 19.5 6v12a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 18V6A1.5 1.5 0 0 1 6 4.5ZM7.5 9h5.25v3H7.5z',
+  qrScan: 'M3.75 3.75h6v6h-6zm10.5 0h6v6h-6zm-10.5 10.5h6v6h-6zM4.5 12h3m9 0h6.75m-3.75 3v4.5m-3-4.5h3',
+  splitPages: 'M6 4.5h9l3 3v12H6zM15 4.5V7.5h3M9 12h6m-6 3.75h4.5',
+  numberWords: 'M6.75 3.75h10.5M9 3.75v16.5M15 3.75v16.5M3.75 9h4.5m7.5 0h4.5m-16.5 6.75h4.5m7.5 0h4.5',
+  numeral: 'M4.5 6.75h6m-6 10.5h6M9 6.75v10.5M14.25 6.75 12 12l2.25 5.25M19.5 6.75v10.5',
+  morse: 'M3.75 12h1.5m3 0h3m3 0h1.5m3 0h1.5M6 8.25v7.5m12-7.5v7.5m-6-3.75v0',
+  ascii: 'M4.5 4.5h4.5v4.5H4.5zm7.5 0h4.5v4.5h-7.5zm7.5 0h.008M4.5 12h4.5m7.5 0h4.5M4.5 19.5h4.5v-4.5H4.5zm7.5 0h7.5v-4.5h-7.5z',
+  palette: 'M12 3.75c-4.5 0-8.25 3.75-8.25 8.25S7.5 20.25 12 20.25c1.5 0 2.25-.75 2.25-1.875 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.7-1.5 1.6-1.5h1.9c2.4 0 4.5-2.1 4.5-4.5 0-4.5-4.7-8.25-9.25-8.25Z',
+  wordFreq: 'M4 6h6m-6 6h10m-10 6h14M14 6h6v3h-6zm3 6h3v3h-3z',
 }
 
 export const PDF_TOOLS: Tool[] = [
@@ -98,6 +106,7 @@ export const PDF_TOOLS: Tool[] = [
   { to: '/add-page-numbers', title: 'Add Page Numbers', description: 'Stamp page numbers onto every page.', icon: ICON_PATHS.pageNumbers },
   { to: '/text-to-pdf', title: 'Text to PDF', description: 'Turn plain text into a downloadable PDF.', icon: ICON_PATHS.textToPdf },
   { to: '/redact-pdf', title: 'Redact PDF', description: 'Black out sensitive regions of a PDF page.', icon: ICON_PATHS.redact },
+  { to: '/split-pdf-pages', title: 'Split PDF into Pages', description: 'Split every page of a PDF into its own file.', icon: ICON_PATHS.splitPages },
 ]
 
 export const OTHER_TOOLS: Tool[] = [
@@ -153,4 +162,11 @@ export const OTHER_TOOLS: Tool[] = [
   { to: '/html-entity-tool', title: 'HTML Entity Encoder/Decoder', description: 'Encode or decode HTML entities.', icon: ICON_PATHS.htmlEntity },
   { to: '/placeholder-image', title: 'Placeholder Image Generator', description: 'Generate a placeholder image at any size and color.', icon: ICON_PATHS.placeholderImage },
   { to: '/subnet-calculator', title: 'IP Subnet Calculator', description: 'Calculate network, broadcast, and usable host range from a CIDR block.', icon: ICON_PATHS.subnet },
+  { to: '/qr-scanner', title: 'QR Code Scanner', description: 'Decode a QR code from an uploaded image.', icon: ICON_PATHS.qrScan },
+  { to: '/number-to-words', title: 'Number to Words', description: 'Convert a number into written-out English words.', icon: ICON_PATHS.numberWords },
+  { to: '/roman-numeral-converter', title: 'Roman Numeral Converter', description: 'Convert between numbers and Roman numerals.', icon: ICON_PATHS.numeral },
+  { to: '/morse-code-translator', title: 'Morse Code Translator', description: 'Translate text to and from Morse code, with audio playback.', icon: ICON_PATHS.morse },
+  { to: '/ascii-art-generator', title: 'ASCII Art Text Generator', description: 'Turn text into a block-letter ASCII banner.', icon: ICON_PATHS.ascii },
+  { to: '/color-palette-extractor', title: 'Color Palette Extractor', description: 'Extract the dominant colors from an image.', icon: ICON_PATHS.palette },
+  { to: '/word-frequency-analyzer', title: 'Word Frequency Analyzer', description: 'Find the most frequently used words in a piece of text.', icon: ICON_PATHS.wordFreq },
 ]

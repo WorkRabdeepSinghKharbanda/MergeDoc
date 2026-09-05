@@ -140,6 +140,19 @@ export async function reorderPdf(file: File, order: number[]): Promise<Uint8Arra
   return out.save()
 }
 
+/** Splits every page of a PDF into its own single-page PDF. */
+export async function splitPdfToPages(file: File): Promise<Uint8Array[]> {
+  const src = await PDFDocument.load(await toArrayBuffer(file))
+  const results: Uint8Array[] = []
+  for (const index of src.getPageIndices()) {
+    const out = await PDFDocument.create()
+    const [page] = await out.copyPages(src, [index])
+    out.addPage(page)
+    results.push(await out.save())
+  }
+  return results
+}
+
 export async function getPageCountFromPdfLib(file: File): Promise<number> {
   const doc = await PDFDocument.load(await toArrayBuffer(file))
   return doc.getPageCount()
