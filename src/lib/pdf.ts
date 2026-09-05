@@ -238,6 +238,79 @@ export async function addPageNumbers(
   return doc.save()
 }
 
+export type InvoiceItem = { description: string; quantity: number; price: number }
+export type InvoiceData = {
+  invoiceNumber: string
+  date: string
+  fromName: string
+  toName: string
+  items: InvoiceItem[]
+  taxPercent: number
+  notes?: string
+}
+
+/** Builds a single-page invoice PDF — plain text layout, no logo/branding. */
+export async function generateInvoicePdf(data: InvoiceData): Promise<Uint8Array> {
+  const doc = await PDFDocument.create()
+  const page = doc.addPage([612, 792])
+  const font = await doc.embedFont(StandardFonts.Helvetica)
+  const bold = await doc.embedFont(StandardFonts.HelveticaBold)
+  const margin = 50
+  let y = 792 - margin
+
+  page.drawText('INVOICE', { x: margin, y, size: 24, font: bold })
+  y -= 30
+  page.drawText(`Invoice #: ${data.invoiceNumber}`, { x: margin, y, size: 10, font })
+  page.drawText(`Date: ${data.date}`, { x: 612 - margin - 150, y, size: 10, font })
+  y -= 30
+  page.drawText(`From: ${data.fromName}`, { x: margin, y, size: 11, font: bold })
+  y -= 16
+  page.drawText(`To: ${data.toName}`, { x: margin, y, size: 11, font: bold })
+  y -= 30
+
+  page.drawText('Description', { x: margin, y, size: 10, font: bold })
+  page.drawText('Qty', { x: 350, y, size: 10, font: bold })
+  page.drawText('Price', { x: 420, y, size: 10, font: bold })
+  page.drawText('Total', { x: 500, y, size: 10, font: bold })
+  y -= 6
+  page.drawLine({ start: { x: margin, y }, end: { x: 612 - margin, y }, thickness: 1, color: rgb(0.8, 0.8, 0.8) })
+  y -= 18
+
+  let subtotal = 0
+  for (const item of data.items) {
+    const lineTotal = item.quantity * item.price
+    subtotal += lineTotal
+    page.drawText(item.description, { x: margin, y, size: 10, font })
+    page.drawText(String(item.quantity), { x: 350, y, size: 10, font })
+    page.drawText(item.price.toFixed(2), { x: 420, y, size: 10, font })
+    page.drawText(lineTotal.toFixed(2), { x: 500, y, size: 10, font })
+    y -= 20
+  }
+
+  const tax = (subtotal * data.taxPercent) / 100
+  const total = subtotal + tax
+  y -= 10
+  page.drawLine({ start: { x: 350, y }, end: { x: 612 - margin, y }, thickness: 1, color: rgb(0.8, 0.8, 0.8) })
+  y -= 20
+  page.drawText('Subtotal', { x: 420, y, size: 10, font })
+  page.drawText(subtotal.toFixed(2), { x: 500, y, size: 10, font })
+  y -= 18
+  page.drawText(`Tax (${data.taxPercent}%)`, { x: 420, y, size: 10, font })
+  page.drawText(tax.toFixed(2), { x: 500, y, size: 10, font })
+  y -= 18
+  page.drawText('Total', { x: 420, y, size: 11, font: bold })
+  page.drawText(total.toFixed(2), { x: 500, y, size: 11, font: bold })
+
+  if (data.notes) {
+    y -= 40
+    page.drawText('Notes:', { x: margin, y, size: 10, font: bold })
+    y -= 16
+    page.drawText(data.notes, { x: margin, y, size: 10, font })
+  }
+
+  return doc.save()
+}
+
 /** Builds a simple multi-page PDF from plain text, wrapping at word boundaries. */
 export async function textToPdf(text: string): Promise<Uint8Array> {
   const doc = await PDFDocument.create()

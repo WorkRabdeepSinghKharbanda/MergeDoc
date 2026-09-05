@@ -61,6 +61,14 @@ const ICON_PATHS = {
   countdown: 'M12 6v6l4 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z',
   teamGen: 'M15 19.128a9.4 9.4 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z',
   textSort: 'M3 4.5h11.25M3 9h7.5M3 13.5h6m9.75-8.25L18 9.75M17.25 5.25v13.5',
+  invoice: 'M9 14.25 11.25 16.5 15 12M6 4.5h12A1.5 1.5 0 0 1 19.5 6v13.5l-2.25-1.5-2.25 1.5-2.25-1.5-2.25 1.5-2.25-1.5-2.25 1.5V6A1.5 1.5 0 0 1 6 4.5Z',
+  vcard: 'M2.25 6.75A2.25 2.25 0 0 1 4.5 4.5h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 19.5h-15a2.25 2.25 0 0 1-2.25-2.25V6.75ZM6.75 9.75a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 0v0m9-1.5h3m-3 3.75h3M6 15.75c.5-1.5 1.75-2.25 3.75-2.25s3.25.75 3.75 2.25',
+  passphrase: 'M8.25 4.5h7.5v3a3.75 3.75 0 0 1-7.5 0v-3ZM12 12v3m-3.75 3h7.5M6 21h12',
+  readingTime: 'M12 6v6l4 2M4.5 4.5h9.75L19.5 9.75V19.5a.75.75 0 0 1-.75.75H4.5a.75.75 0 0 1-.75-.75V5.25a.75.75 0 0 1 .75-.75Z',
+  pomodoro: 'M12 8.25v3.75l2.25 1.5M9.75 3.75h4.5M12 21a8.25 8.25 0 1 0 0-16.5 8.25 8.25 0 0 0 0 16.5Z',
+  salesTax: 'M9 8.25h.008v.008H9V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM15 15.75h.008v.008H15v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM4.5 4.5h9l6 6-9 9-6-6v-9Z',
+  imageConvert: 'M4.5 4.5h6v6h-6zm9 9h6v6h-6zM4.5 19.5l4.5-4.5m10.5-10.5-4.5 4.5M15 4.5h4.5V9M9 19.5H4.5V15',
+  colorBlind: 'M12 3.75c-4.5 0-8.25 3.75-8.25 8.25S7.5 20.25 12 20.25 20.25 16.5 20.25 12A8.25 8.25 0 0 0 12 3.75Zm0 0v16.5m8.25-8.25H3.75',
 }
 
 export const PDF_TOOLS: Tool[] = [
@@ -121,4 +129,12 @@ export const OTHER_TOOLS: Tool[] = [
   { to: '/countdown-stopwatch', title: 'Countdown Timer & Stopwatch', description: 'A simple countdown timer and stopwatch.', icon: ICON_PATHS.countdown },
   { to: '/team-generator', title: 'Random Team Generator', description: 'Split a list of names into random, balanced teams.', icon: ICON_PATHS.teamGen },
   { to: '/text-sorter', title: 'Text Line Sorter', description: 'Sort, deduplicate, and clean up a list of lines.', icon: ICON_PATHS.textSort },
+  { to: '/invoice-generator', title: 'Invoice Generator', description: 'Create a simple invoice PDF from a form.', icon: ICON_PATHS.invoice },
+  { to: '/vcard-qr', title: 'vCard QR Code Generator', description: 'Turn contact details into a scannable QR code.', icon: ICON_PATHS.vcard },
+  { to: '/passphrase-generator', title: 'Passphrase Generator', description: 'Generate a memorable, multi-word passphrase.', icon: ICON_PATHS.passphrase },
+  { to: '/reading-time', title: 'Reading Time & Readability', description: 'Estimate reading time and Flesch readability score.', icon: ICON_PATHS.readingTime },
+  { to: '/pomodoro-timer', title: 'Pomodoro Timer', description: 'A focus timer using the Pomodoro technique.', icon: ICON_PATHS.pomodoro },
+  { to: '/sales-tax-calculator', title: 'Sales Tax Calculator', description: 'Add or remove sales tax from a price.', icon: ICON_PATHS.salesTax },
+  { to: '/image-converter', title: 'Image Format Converter', description: 'Convert images between PNG, JPEG, and WebP.', icon: ICON_PATHS.imageConvert },
+  { to: '/color-blind-simulator', title: 'Color Blindness Simulator', description: 'Preview how an image looks with color vision deficiencies.', icon: ICON_PATHS.colorBlind },
 ]

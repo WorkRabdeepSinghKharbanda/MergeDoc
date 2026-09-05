@@ -55,4 +55,12 @@
   <url><loc>https://mergedoc.vercel.app/countdown-stopwatch</loc><priority>0.7</priority></url>
   <url><loc>https://mergedoc.vercel.app/team-generator</loc><priority>0.7</priority></url>
   <url><loc>https://mergedoc.vercel.app/text-sorter</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/invoice-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/vcard-qr</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/passphrase-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/reading-time</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/pomodoro-timer</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/sales-tax-calculator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/image-converter</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/color-blind-simulator</loc><priority>0.7</priority></url>
 </urlset>
