@@ -85,6 +85,14 @@ const ICON_PATHS = {
   ascii: 'M4.5 4.5h4.5v4.5H4.5zm7.5 0h4.5v4.5h-7.5zm7.5 0h.008M4.5 12h4.5m7.5 0h4.5M4.5 19.5h4.5v-4.5H4.5zm7.5 0h7.5v-4.5h-7.5z',
   palette: 'M12 3.75c-4.5 0-8.25 3.75-8.25 8.25S7.5 20.25 12 20.25c1.5 0 2.25-.75 2.25-1.875 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.7-1.5 1.6-1.5h1.9c2.4 0 4.5-2.1 4.5-4.5 0-4.5-4.7-8.25-9.25-8.25Z',
   wordFreq: 'M4 6h6m-6 6h10m-10 6h14M14 6h6v3h-6zm3 6h3v3h-3z',
+  todo: 'M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z',
+  scratchpad: 'M16.862 4.487 18.549 2.8a2.121 2.121 0 0 1 3 3l-1.687 1.688m-3-3-10.5 10.5v3h3l10.5-10.5m-3-3 3 3M6 20.25h12',
+  countdownDate: 'M6.75 3v3m10.5-3v3M4.5 8.25h15M5.25 6h13.5A1.5 1.5 0 0 1 20.25 7.5v12a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-12A1.5 1.5 0 0 1 5.25 6ZM12 12v3l2 1',
+  billSplit: 'M4.5 4.5h9l6 6-9 9-6-6v-9Z M9 8.25h.008v.008H9V8.25Z',
+  wheel: 'M12 3.75a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 3.75V12l6-3',
+  mdTable: 'M3.75 4.5h16.5v15H3.75zM3.75 9h16.5M9 4.5V19.5M15 4.5V19.5',
+  dice: 'M4.5 4.5h15v15h-15zM9 9h.008v.008H9zm6 0h.008v.008H15zm-3 3h.008v.008H12zm-3 3h.008v.008H9zm6 0h.008v.008H15z',
+  randomNum: 'M4.5 4.5h6v6h-6zm9 9h6v6h-6zM4.5 19.5l4.5-4.5m10.5-10.5-4.5 4.5M15 4.5h4.5V9',
 }
 
 export const PDF_TOOLS: Tool[] = [
@@ -169,4 +177,12 @@ export const OTHER_TOOLS: Tool[] = [
   { to: '/ascii-art-generator', title: 'ASCII Art Text Generator', description: 'Turn text into a block-letter ASCII banner.', icon: ICON_PATHS.ascii },
   { to: '/color-palette-extractor', title: 'Color Palette Extractor', description: 'Extract the dominant colors from an image.', icon: ICON_PATHS.palette },
   { to: '/word-frequency-analyzer', title: 'Word Frequency Analyzer', description: 'Find the most frequently used words in a piece of text.', icon: ICON_PATHS.wordFreq },
+  { to: '/todo-list', title: 'Todo List', description: 'A simple todo list that saves to your browser.', icon: ICON_PATHS.todo },
+  { to: '/scratchpad', title: 'Scratchpad', description: 'A notepad that autosaves to your browser.', icon: ICON_PATHS.scratchpad },
+  { to: '/countdown-to-date', title: 'Countdown to Date', description: 'Count down to any future date.', icon: ICON_PATHS.countdownDate },
+  { to: '/bill-splitter', title: 'Bill Splitter', description: 'Split a shared bill fairly and see who owes whom.', icon: ICON_PATHS.billSplit },
+  { to: '/decision-wheel', title: 'Decision Wheel', description: 'Spin a wheel to make a random choice.', icon: ICON_PATHS.wheel },
+  { to: '/markdown-table-generator', title: 'Markdown Table Generator', description: 'Convert delimited data into a Markdown table.', icon: ICON_PATHS.mdTable },
+  { to: '/dice-roller', title: 'Dice Roller', description: 'Roll any number of dice with any number of sides.', icon: ICON_PATHS.dice },
+  { to: '/random-number-generator', title: 'Random Number Generator', description: 'Generate random numbers within a range.', icon: ICON_PATHS.randomNum },
 ]
