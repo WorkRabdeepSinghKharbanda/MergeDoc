@@ -48,6 +48,14 @@ import NumberBaseConverter from './pages/NumberBaseConverter'
 import TextEncryptor from './pages/TextEncryptor'
 import TextToSpeech from './pages/TextToSpeech'
 import SlugGenerator from './pages/SlugGenerator'
+import FaviconGenerator from './pages/FaviconGenerator'
+import QrBatchGenerator from './pages/QrBatchGenerator'
+import LoanCalculator from './pages/LoanCalculator'
+import DiscountCalculator from './pages/DiscountCalculator'
+import GpaCalculator from './pages/GpaCalculator'
+import CountdownStopwatch from './pages/CountdownStopwatch'
+import TeamGenerator from './pages/TeamGenerator'
+import TextSorter from './pages/TextSorter'
 
 export default function App() {
   return (
@@ -102,6 +110,14 @@ export default function App() {
             <Route path="/text-encryptor" element={<TextEncryptor />} />
             <Route path="/text-to-speech" element={<TextToSpeech />} />
             <Route path="/slug-generator" element={<SlugGenerator />} />
+            <Route path="/favicon-generator" element={<FaviconGenerator />} />
+            <Route path="/qr-batch-generator" element={<QrBatchGenerator />} />
+            <Route path="/loan-calculator" element={<LoanCalculator />} />
+            <Route path="/discount-calculator" element={<DiscountCalculator />} />
+            <Route path="/gpa-calculator" element={<GpaCalculator />} />
+            <Route path="/countdown-stopwatch" element={<CountdownStopwatch />} />
+            <Route path="/team-generator" element={<TeamGenerator />} />
+            <Route path="/text-sorter" element={<TextSorter />} />
           </Route>
         </Routes>
       </BrowserRouter>

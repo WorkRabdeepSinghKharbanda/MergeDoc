@@ -47,4 +47,12 @@
   <url><loc>https://mergedoc.vercel.app/text-encryptor</loc><priority>0.7</priority></url>
   <url><loc>https://mergedoc.vercel.app/text-to-speech</loc><priority>0.7</priority></url>
   <url><loc>https://mergedoc.vercel.app/slug-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/favicon-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/qr-batch-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/loan-calculator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/discount-calculator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/gpa-calculator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/countdown-stopwatch</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/team-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/text-sorter</loc><priority>0.7</priority></url>
 </urlset>
