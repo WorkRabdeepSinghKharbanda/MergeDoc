@@ -17,15 +17,23 @@ export default function AgeCalculator() {
 
     let years = target.getFullYear() - birth.getFullYear()
     let months = target.getMonth() - birth.getMonth()
-    let days = target.getDate() - birth.getDate()
-    if (days < 0) {
-      months -= 1
-      days += new Date(target.getFullYear(), target.getMonth(), 0).getDate()
-    }
     if (months < 0) {
       years -= 1
       months += 12
     }
+    // Date() normalizes overflow (e.g. Jan 31 + 1 month -> Mar 3), so walk back a month
+    // at a time until the cursor no longer overshoots the target — handles short-February
+    // edge cases (e.g. birth Jan 31, target Mar 1) that a single fixed-width borrow can't.
+    let cursor = new Date(birth.getFullYear() + years, birth.getMonth() + months, birth.getDate())
+    while (cursor > target) {
+      months -= 1
+      if (months < 0) {
+        years -= 1
+        months += 12
+      }
+      cursor = new Date(birth.getFullYear() + years, birth.getMonth() + months, birth.getDate())
+    }
+    const days = Math.round((target.getTime() - cursor.getTime()) / (1000 * 60 * 60 * 24))
 
     let nextBirthday = new Date(target.getFullYear(), birth.getMonth(), birth.getDate())
     if (nextBirthday < target) nextBirthday = new Date(target.getFullYear() + 1, birth.getMonth(), birth.getDate())

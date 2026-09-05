@@ -69,6 +69,14 @@ const ICON_PATHS = {
   salesTax: 'M9 8.25h.008v.008H9V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM15 15.75h.008v.008H15v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM4.5 4.5h9l6 6-9 9-6-6v-9Z',
   imageConvert: 'M4.5 4.5h6v6h-6zm9 9h6v6h-6zM4.5 19.5l4.5-4.5m10.5-10.5-4.5 4.5M15 4.5h4.5V9M9 19.5H4.5V15',
   colorBlind: 'M12 3.75c-4.5 0-8.25 3.75-8.25 8.25S7.5 20.25 12 20.25 20.25 16.5 20.25 12A8.25 8.25 0 0 0 12 3.75Zm0 0v16.5m8.25-8.25H3.75',
+  cssGradient: 'M3.75 3.75h16.5v16.5H3.75zM3.75 8.25h16.5M8.25 3.75v16.5',
+  cssShadow: 'M6 4.5h10.5v10.5H6zM9 7.5h10.5V18H9z',
+  cssRadius: 'M4.5 19.5v-9A6 6 0 0 1 10.5 4.5h9',
+  barcode: 'M4.5 4.5v15m3-15v15m3-15v15m2-15v15m3-15v15m3-15v15m3-15v15',
+  htmlEntity: 'm9.75 8.25-3 3.75 3 3.75m4.5-7.5 3 3.75-3 3.75M13.5 4.5 10.5 19.5',
+  placeholderImage: 'M3.75 4.5h16.5v15H3.75zM3.75 15l4.5-4.5 3 3 5.25-5.25 3.75 3.75M9 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z',
+  subnet: 'M8.25 3.75h7.5v4.5h-7.5zM4.5 15.75h4.5v4.5h-4.5zm7.5 0h4.5v4.5h-4.5zm7.5 0h-4.5m-9 0H4.5M12 8.25v3m0 4.5v-4.5m3-4.5v4.5m-6-4.5v4.5',
+  redact: 'M6 4.5h12A1.5 1.5 0 0 1 19.5 6v12a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 18V6A1.5 1.5 0 0 1 6 4.5ZM7.5 9h5.25v3H7.5z',
 }
 
 export const PDF_TOOLS: Tool[] = [
@@ -89,6 +97,7 @@ export const PDF_TOOLS: Tool[] = [
   { to: '/crop-pdf', title: 'Crop PDF', description: 'Trim margins from every page.', icon: ICON_PATHS.crop },
   { to: '/add-page-numbers', title: 'Add Page Numbers', description: 'Stamp page numbers onto every page.', icon: ICON_PATHS.pageNumbers },
   { to: '/text-to-pdf', title: 'Text to PDF', description: 'Turn plain text into a downloadable PDF.', icon: ICON_PATHS.textToPdf },
+  { to: '/redact-pdf', title: 'Redact PDF', description: 'Black out sensitive regions of a PDF page.', icon: ICON_PATHS.redact },
 ]
 
 export const OTHER_TOOLS: Tool[] = [
@@ -137,4 +146,11 @@ export const OTHER_TOOLS: Tool[] = [
   { to: '/sales-tax-calculator', title: 'Sales Tax Calculator', description: 'Add or remove sales tax from a price.', icon: ICON_PATHS.salesTax },
   { to: '/image-converter', title: 'Image Format Converter', description: 'Convert images between PNG, JPEG, and WebP.', icon: ICON_PATHS.imageConvert },
   { to: '/color-blind-simulator', title: 'Color Blindness Simulator', description: 'Preview how an image looks with color vision deficiencies.', icon: ICON_PATHS.colorBlind },
+  { to: '/css-gradient-generator', title: 'CSS Gradient Generator', description: 'Design a linear or radial gradient and copy the CSS.', icon: ICON_PATHS.cssGradient },
+  { to: '/css-box-shadow-generator', title: 'CSS Box Shadow Generator', description: 'Design a box shadow and copy the CSS.', icon: ICON_PATHS.cssShadow },
+  { to: '/css-border-radius-generator', title: 'CSS Border Radius Generator', description: 'Design a per-corner border radius and copy the CSS.', icon: ICON_PATHS.cssRadius },
+  { to: '/barcode-generator', title: 'Barcode Generator', description: 'Generate a Code 128 barcode from text.', icon: ICON_PATHS.barcode },
+  { to: '/html-entity-tool', title: 'HTML Entity Encoder/Decoder', description: 'Encode or decode HTML entities.', icon: ICON_PATHS.htmlEntity },
+  { to: '/placeholder-image', title: 'Placeholder Image Generator', description: 'Generate a placeholder image at any size and color.', icon: ICON_PATHS.placeholderImage },
+  { to: '/subnet-calculator', title: 'IP Subnet Calculator', description: 'Calculate network, broadcast, and usable host range from a CIDR block.', icon: ICON_PATHS.subnet },
 ]

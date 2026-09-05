@@ -18,6 +18,7 @@
   <url><loc>https://mergedoc.vercel.app/crop-pdf</loc><priority>0.8</priority></url>
   <url><loc>https://mergedoc.vercel.app/add-page-numbers</loc><priority>0.8</priority></url>
   <url><loc>https://mergedoc.vercel.app/text-to-pdf</loc><priority>0.8</priority></url>
+  <url><loc>https://mergedoc.vercel.app/redact-pdf</loc><priority>0.8</priority></url>
   <url><loc>https://mergedoc.vercel.app/image-compress</loc><priority>0.8</priority></url>
   <url><loc>https://mergedoc.vercel.app/qr-generator</loc><priority>0.8</priority></url>
   <url><loc>https://mergedoc.vercel.app/word-counter</loc><priority>0.7</priority></url>
@@ -63,4 +64,11 @@
   <url><loc>https://mergedoc.vercel.app/sales-tax-calculator</loc><priority>0.7</priority></url>
   <url><loc>https://mergedoc.vercel.app/image-converter</loc><priority>0.7</priority></url>
   <url><loc>https://mergedoc.vercel.app/color-blind-simulator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/css-gradient-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/css-box-shadow-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/css-border-radius-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/barcode-generator</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/html-entity-tool</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/placeholder-image</loc><priority>0.7</priority></url>
+  <url><loc>https://mergedoc.vercel.app/subnet-calculator</loc><priority>0.7</priority></url>
 </urlset>

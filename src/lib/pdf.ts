@@ -184,6 +184,29 @@ export async function signPdf(
   return doc.save()
 }
 
+export type RedactionBox = { pageIndex: number; xRatio: number; yRatio: number; widthRatio: number; heightRatio: number }
+
+/** Draws opaque black rectangles over the given normalized (0-1) regions. Covers the content visually but does not remove underlying text — fine for print/scan redaction, not for text-searchable removal. */
+export async function redactPdf(file: File, boxes: RedactionBox[]): Promise<Uint8Array> {
+  const doc = await PDFDocument.load(await toArrayBuffer(file))
+  const pages = doc.getPages()
+  for (const box of boxes) {
+    const page = pages[box.pageIndex]
+    if (!page) continue
+    const { width, height } = page.getSize()
+    const w = width * box.widthRatio
+    const h = height * box.heightRatio
+    page.drawRectangle({
+      x: width * box.xRatio,
+      y: height * (1 - box.yRatio) - h,
+      width: w,
+      height: h,
+      color: rgb(0, 0, 0),
+    })
+  }
+  return doc.save()
+}
+
 export type PdfFormField = { name: string; type: 'text' | 'checkbox' | 'radio' | 'dropdown' | 'unsupported'; options?: string[] }
 
 export async function readPdfFormFields(file: File): Promise<PdfFormField[]> {

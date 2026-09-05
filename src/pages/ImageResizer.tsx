@@ -17,13 +17,15 @@ export default function ImageResizer() {
     const f = fileList?.[0]
     if (!f || (f.type !== 'image/jpeg' && f.type !== 'image/png')) return
     setFile(f)
+    const url = URL.createObjectURL(f)
     const img = new Image()
     img.onload = () => {
       setWidth(img.width)
       setHeight(img.height)
       setRatio(img.width / img.height)
+      URL.revokeObjectURL(url)
     }
-    img.src = URL.createObjectURL(f)
+    img.src = url
   }
 
   function handleWidth(next: number) {
