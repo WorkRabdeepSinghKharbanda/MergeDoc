@@ -72,6 +72,14 @@ import HtmlEntityTool from './pages/HtmlEntityTool'
 import PlaceholderImage from './pages/PlaceholderImage'
 import SubnetCalculator from './pages/SubnetCalculator'
 import RedactPdf from './pages/RedactPdf'
+import SplitPdfPages from './pages/SplitPdfPages'
+import QrScanner from './pages/QrScanner'
+import NumberToWords from './pages/NumberToWords'
+import RomanNumeralConverter from './pages/RomanNumeralConverter'
+import MorseCodeTranslator from './pages/MorseCodeTranslator'
+import AsciiArtGenerator from './pages/AsciiArtGenerator'
+import ColorPaletteExtractor from './pages/ColorPaletteExtractor'
+import WordFrequencyAnalyzer from './pages/WordFrequencyAnalyzer'
 
 export default function App() {
   return (
@@ -150,6 +158,14 @@ export default function App() {
             <Route path="/placeholder-image" element={<PlaceholderImage />} />
             <Route path="/subnet-calculator" element={<SubnetCalculator />} />
             <Route path="/redact-pdf" element={<RedactPdf />} />
+            <Route path="/split-pdf-pages" element={<SplitPdfPages />} />
+            <Route path="/qr-scanner" element={<QrScanner />} />
+            <Route path="/number-to-words" element={<NumberToWords />} />
+            <Route path="/roman-numeral-converter" element={<RomanNumeralConverter />} />
+            <Route path="/morse-code-translator" element={<MorseCodeTranslator />} />
+            <Route path="/ascii-art-generator" element={<AsciiArtGenerator />} />
+            <Route path="/color-palette-extractor" element={<ColorPaletteExtractor />} />
+            <Route path="/word-frequency-analyzer" element={<WordFrequencyAnalyzer />} />
           </Route>
         </Routes>
       </BrowserRouter>
