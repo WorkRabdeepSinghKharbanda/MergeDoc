@@ -22,7 +22,10 @@ export default function ColorBlindSimulator() {
     const f = fileList?.[0]
     if (!f || !f.type.startsWith('image/')) return
     setFile(f)
-    setOriginal(URL.createObjectURL(f))
+    setOriginal((prev) => {
+      if (prev) URL.revokeObjectURL(prev)
+      return URL.createObjectURL(f)
+    })
     setResult(null)
   }
 

@@ -18,13 +18,17 @@ export default function FaviconGenerator() {
     const f = fileList?.[0]
     if (!f || (f.type !== 'image/jpeg' && f.type !== 'image/png')) return
     setFile(f)
-    setIcons([])
+    setIcons((prev) => {
+      prev.forEach((icon) => URL.revokeObjectURL(icon.url))
+      return []
+    })
   }
 
   async function handleGenerate() {
     if (!file) return
     setBusy(true)
     try {
+      icons.forEach((icon) => URL.revokeObjectURL(icon.url))
       const results = await Promise.all(
         SIZES.map(async (size) => ({ size, url: URL.createObjectURL(await resizeImage(file, size, size)) })),
       )

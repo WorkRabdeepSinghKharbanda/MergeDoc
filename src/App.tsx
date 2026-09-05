@@ -64,6 +64,14 @@ import PomodoroTimer from './pages/PomodoroTimer'
 import SalesTaxCalculator from './pages/SalesTaxCalculator'
 import ImageConverter from './pages/ImageConverter'
 import ColorBlindSimulator from './pages/ColorBlindSimulator'
+import CssGradientGenerator from './pages/CssGradientGenerator'
+import CssBoxShadowGenerator from './pages/CssBoxShadowGenerator'
+import CssBorderRadiusGenerator from './pages/CssBorderRadiusGenerator'
+import BarcodeGenerator from './pages/BarcodeGenerator'
+import HtmlEntityTool from './pages/HtmlEntityTool'
+import PlaceholderImage from './pages/PlaceholderImage'
+import SubnetCalculator from './pages/SubnetCalculator'
+import RedactPdf from './pages/RedactPdf'
 
 export default function App() {
   return (
@@ -134,6 +142,14 @@ export default function App() {
             <Route path="/sales-tax-calculator" element={<SalesTaxCalculator />} />
             <Route path="/image-converter" element={<ImageConverter />} />
             <Route path="/color-blind-simulator" element={<ColorBlindSimulator />} />
+            <Route path="/css-gradient-generator" element={<CssGradientGenerator />} />
+            <Route path="/css-box-shadow-generator" element={<CssBoxShadowGenerator />} />
+            <Route path="/css-border-radius-generator" element={<CssBorderRadiusGenerator />} />
+            <Route path="/barcode-generator" element={<BarcodeGenerator />} />
+            <Route path="/html-entity-tool" element={<HtmlEntityTool />} />
+            <Route path="/placeholder-image" element={<PlaceholderImage />} />
+            <Route path="/subnet-calculator" element={<SubnetCalculator />} />
+            <Route path="/redact-pdf" element={<RedactPdf />} />
           </Route>
         </Routes>
       </BrowserRouter>
