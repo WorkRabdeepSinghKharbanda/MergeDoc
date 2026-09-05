@@ -56,6 +56,14 @@ import GpaCalculator from './pages/GpaCalculator'
 import CountdownStopwatch from './pages/CountdownStopwatch'
 import TeamGenerator from './pages/TeamGenerator'
 import TextSorter from './pages/TextSorter'
+import InvoiceGenerator from './pages/InvoiceGenerator'
+import VCardQr from './pages/VCardQr'
+import PassphraseGenerator from './pages/PassphraseGenerator'
+import ReadingTime from './pages/ReadingTime'
+import PomodoroTimer from './pages/PomodoroTimer'
+import SalesTaxCalculator from './pages/SalesTaxCalculator'
+import ImageConverter from './pages/ImageConverter'
+import ColorBlindSimulator from './pages/ColorBlindSimulator'
 
 export default function App() {
   return (
@@ -118,6 +126,14 @@ export default function App() {
             <Route path="/countdown-stopwatch" element={<CountdownStopwatch />} />
             <Route path="/team-generator" element={<TeamGenerator />} />
             <Route path="/text-sorter" element={<TextSorter />} />
+            <Route path="/invoice-generator" element={<InvoiceGenerator />} />
+            <Route path="/vcard-qr" element={<VCardQr />} />
+            <Route path="/passphrase-generator" element={<PassphraseGenerator />} />
+            <Route path="/reading-time" element={<ReadingTime />} />
+            <Route path="/pomodoro-timer" element={<PomodoroTimer />} />
+            <Route path="/sales-tax-calculator" element={<SalesTaxCalculator />} />
+            <Route path="/image-converter" element={<ImageConverter />} />
+            <Route path="/color-blind-simulator" element={<ColorBlindSimulator />} />
           </Route>
         </Routes>
       </BrowserRouter>
