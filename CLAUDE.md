@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run build` — `tsc -b && vite build`, output to `dist/`
 - `npm run lint` — oxlint (`.oxlintrc.json`)
 - `npm run preview` — serve the production build locally
-- Deploy: `vercel --prod --yes --name mergedoc` (project already linked in `.vercel/`)
+- Deploy: `vercel --prod --yes` (project already linked in `.vercel/`; the `--name` flag is deprecated and now causes deploy_failed/"Not authorized" — omit it)
 
 No test runner is configured.
 
