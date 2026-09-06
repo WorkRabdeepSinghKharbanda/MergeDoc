@@ -1,5 +1,6 @@
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import NavHeader from './NavHeader'
+import ConsentBanner from './ConsentBanner'
 
 export default function Layout() {
   return (
@@ -11,8 +12,13 @@ export default function Layout() {
       </main>
 
       <footer className="border-t border-slate-200 py-8 text-center text-sm text-slate-400 dark:border-slate-800 dark:text-slate-600">
-        MergeDoc — PDF tools that run entirely in your browser. No uploads, no servers.
+        <p>MergeDoc — PDF tools that run entirely in your browser. No uploads, no servers.</p>
+        <Link to="/privacy-policy" className="mt-2 inline-block underline hover:text-slate-600 dark:hover:text-slate-400">
+          Privacy Policy
+        </Link>
       </footer>
+
+      <ConsentBanner />
     </div>
   )
 }

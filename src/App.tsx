@@ -88,6 +88,7 @@ import DecisionWheel from './pages/DecisionWheel'
 import MarkdownTableGenerator from './pages/MarkdownTableGenerator'
 import DiceRoller from './pages/DiceRoller'
 import RandomNumberGenerator from './pages/RandomNumberGenerator'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 
 export default function App() {
   return (
@@ -182,6 +183,7 @@ export default function App() {
             <Route path="/markdown-table-generator" element={<MarkdownTableGenerator />} />
             <Route path="/dice-roller" element={<DiceRoller />} />
             <Route path="/random-number-generator" element={<RandomNumberGenerator />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Route>
         </Routes>
       </BrowserRouter>
