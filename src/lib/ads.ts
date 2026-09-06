@@ -2,7 +2,7 @@
  * PLACEHOLDER — replace with your real AdSense publisher ID (ca-pub-XXXXXXXXXXXXXXXX)
  * before going live. Until then AdSlot renders its dashed placeholder instead of a real ad.
  */
-export const ADSENSE_CLIENT_ID = 'ca-pub-0000000000000000'
+export const ADSENSE_CLIENT_ID = 'ca-pub-5852027898822024'
 
 const isConfigured = !ADSENSE_CLIENT_ID.includes('0000000000000000')
 
