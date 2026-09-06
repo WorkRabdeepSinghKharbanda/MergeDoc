@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+Full feature/tool inventory and product-level state (monetization, SEO, privacy, mobile fixes, bug-audit history) lives at `.claude/brain/FEATURES.md` — read it before starting work in a new session.
+
 ## Commands
 
 - `npm run dev` — start dev server
