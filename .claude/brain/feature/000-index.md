@@ -1,0 +1,90 @@
+# Feature Index
+
+One file per tool, numbered in the same order as `src/lib/tools.ts`. Source of truth for the tool list/routes is always `src/lib/tools.ts` — if this index disagrees, `tools.ts` wins.
+
+- [001](001-merge-pdf.md) — Merge PDF (`/merge`) — PDF
+- [002](002-split-pdf.md) — Split PDF (`/split`) — PDF
+- [003](003-compress-pdf.md) — Compress PDF (`/compress`) — PDF
+- [004](004-rotate-pdf.md) — Rotate PDF (`/rotate`) — PDF
+- [005](005-watermark-pdf.md) — Watermark PDF (`/watermark`) — PDF
+- [006](006-protect-pdf.md) — Protect PDF (`/protect`) — PDF
+- [007](007-edit-metadata.md) — Edit Metadata (`/metadata`) — PDF
+- [008](008-reorder-pages.md) — Reorder Pages (`/reorder`) — PDF
+- [009](009-pdf-to-image.md) — PDF to Image (`/pdf-to-image`) — PDF
+- [010](010-image-to-pdf.md) — Image to PDF (`/image-to-pdf`) — PDF
+- [011](011-compare-pdfs.md) — Compare PDFs (`/compare-pdf`) — PDF
+- [012](012-sign-pdf.md) — Sign PDF (`/sign-pdf`) — PDF
+- [013](013-fill-pdf-form.md) — Fill PDF Form (`/fill-form`) — PDF
+- [014](014-extract-text.md) — Extract Text (`/extract-text`) — PDF
+- [015](015-crop-pdf.md) — Crop PDF (`/crop-pdf`) — PDF
+- [016](016-add-page-numbers.md) — Add Page Numbers (`/add-page-numbers`) — PDF
+- [017](017-text-to-pdf.md) — Text to PDF (`/text-to-pdf`) — PDF
+- [018](018-redact-pdf.md) — Redact PDF (`/redact-pdf`) — PDF
+- [019](019-split-pdf-into-pages.md) — Split PDF into Pages (`/split-pdf-pages`) — PDF
+- [020](020-image-compressor.md) — Image Compressor (`/image-compress`) — Images
+- [021](021-qr-code-generator.md) — QR Code Generator (`/qr-generator`) — QR & contact
+- [022](022-word-counter.md) — Word Counter (`/word-counter`) — Text & writing
+- [023](023-type-master.md) — Type Master (`/type-master`) — Text & writing
+- [024](024-password-generator.md) — Password Generator (`/password-tool`) — Security & privacy
+- [025](025-json-formatter.md) — JSON Formatter (`/json-formatter`) — Developer tools
+- [026](026-unit-converter.md) — Unit Converter (`/unit-converter`) — Other
+- [027](027-base64-encoder-decoder.md) — Base64 Encoder/Decoder (`/base64-tool`) — Developer tools
+- [028](028-url-encoder-decoder.md) — URL Encoder/Decoder (`/url-encoder`) — Developer tools
+- [029](029-case-converter.md) — Case Converter (`/case-converter`) — Text & writing
+- [030](030-hash-generator.md) — Hash Generator (`/hash-generator`) — Developer tools
+- [031](031-timestamp-converter.md) — Timestamp Converter (`/timestamp-converter`) — Other
+- [032](032-csv-json-converter.md) — CSV ⇄ JSON Converter (`/csv-json-converter`) — Developer tools
+- [033](033-text-diff-checker.md) — Text Diff Checker (`/text-diff`) — Text & writing
+- [034](034-color-converter.md) — Color Converter (`/color-tool`) — Other
+- [035](035-uuid-generator.md) — UUID Generator (`/uuid-generator`) — Developer tools
+- [036](036-lorem-ipsum-generator.md) — Lorem Ipsum Generator (`/lorem-generator`) — Text & writing
+- [037](037-regex-tester.md) — Regex Tester (`/regex-tester`) — Developer tools
+- [038](038-image-resizer.md) — Image Resizer (`/image-resize`) — Images
+- [039](039-markdown-previewer.md) — Markdown Previewer (`/markdown-preview`) — Text & writing
+- [040](040-meta-tag-generator.md) — Meta Tag Generator (`/meta-tag-generator`) — Developer tools
+- [041](041-bmi-calculator.md) — BMI Calculator (`/bmi-calculator`) — Calculators
+- [042](042-percentage-calculator.md) — Percentage Calculator (`/percentage-calculator`) — Calculators
+- [043](043-tip-calculator.md) — Tip Calculator (`/tip-calculator`) — Calculators
+- [044](044-age-calculator.md) — Age Calculator (`/age-calculator`) — Calculators
+- [045](045-number-base-converter.md) — Number Base Converter (`/number-base-converter`) — Developer tools
+- [046](046-text-encryptor.md) — Text Encryptor (`/text-encryptor`) — Security & privacy
+- [047](047-text-to-speech.md) — Text to Speech (`/text-to-speech`) — Fun & productivity
+- [048](048-slug-generator.md) — Slug Generator (`/slug-generator`) — Text & writing
+- [049](049-favicon-generator.md) — Favicon Generator (`/favicon-generator`) — Images
+- [050](050-batch-qr-code-generator.md) — Batch QR Code Generator (`/qr-batch-generator`) — QR & contact
+- [051](051-loan-emi-calculator.md) — Loan & EMI Calculator (`/loan-calculator`) — Calculators
+- [052](052-discount-calculator.md) — Discount Calculator (`/discount-calculator`) — Calculators
+- [053](053-gpa-calculator.md) — GPA Calculator (`/gpa-calculator`) — Calculators
+- [054](054-countdown-timer-stopwatch.md) — Countdown Timer & Stopwatch (`/countdown-stopwatch`) — Fun & productivity
+- [055](055-random-team-generator.md) — Random Team Generator (`/team-generator`) — Fun & productivity
+- [056](056-text-line-sorter.md) — Text Line Sorter (`/text-sorter`) — Text & writing
+- [057](057-invoice-generator.md) — Invoice Generator (`/invoice-generator`) — PDF
+- [058](058-vcard-qr-code-generator.md) — vCard QR Code Generator (`/vcard-qr`) — QR & contact
+- [059](059-passphrase-generator.md) — Passphrase Generator (`/passphrase-generator`) — Security & privacy
+- [060](060-reading-time-readability.md) — Reading Time & Readability (`/reading-time`) — Text & writing
+- [061](061-pomodoro-timer.md) — Pomodoro Timer (`/pomodoro-timer`) — Fun & productivity
+- [062](062-sales-tax-calculator.md) — Sales Tax Calculator (`/sales-tax-calculator`) — Calculators
+- [063](063-image-format-converter.md) — Image Format Converter (`/image-converter`) — Images
+- [064](064-color-blindness-simulator.md) — Color Blindness Simulator (`/color-blind-simulator`) — Images
+- [065](065-css-gradient-generator.md) — CSS Gradient Generator (`/css-gradient-generator`) — Developer tools
+- [066](066-css-box-shadow-generator.md) — CSS Box Shadow Generator (`/css-box-shadow-generator`) — Developer tools
+- [067](067-css-border-radius-generator.md) — CSS Border Radius Generator (`/css-border-radius-generator`) — Developer tools
+- [068](068-barcode-generator.md) — Barcode Generator (`/barcode-generator`) — Developer tools
+- [069](069-html-entity-encoder-decoder.md) — HTML Entity Encoder/Decoder (`/html-entity-tool`) — Developer tools
+- [070](070-placeholder-image-generator.md) — Placeholder Image Generator (`/placeholder-image`) — Other
+- [071](071-ip-subnet-calculator.md) — IP Subnet Calculator (`/subnet-calculator`) — Developer tools
+- [072](072-qr-code-scanner.md) — QR Code Scanner (`/qr-scanner`) — QR & contact
+- [073](073-number-to-words.md) — Number to Words (`/number-to-words`) — Fun & productivity
+- [074](074-roman-numeral-converter.md) — Roman Numeral Converter (`/roman-numeral-converter`) — Fun & productivity
+- [075](075-morse-code-translator.md) — Morse Code Translator (`/morse-code-translator`) — Fun & productivity
+- [076](076-ascii-art-text-generator.md) — ASCII Art Text Generator (`/ascii-art-generator`) — Fun & productivity
+- [077](077-color-palette-extractor.md) — Color Palette Extractor (`/color-palette-extractor`) — Images
+- [078](078-word-frequency-analyzer.md) — Word Frequency Analyzer (`/word-frequency-analyzer`) — Text & writing
+- [079](079-todo-list.md) — Todo List (`/todo-list`) — Fun & productivity
+- [080](080-scratchpad.md) — Scratchpad (`/scratchpad`) — Fun & productivity
+- [081](081-countdown-to-date.md) — Countdown to Date (`/countdown-to-date`) — Fun & productivity
+- [082](082-bill-splitter.md) — Bill Splitter (`/bill-splitter`) — Calculators
+- [083](083-decision-wheel.md) — Decision Wheel (`/decision-wheel`) — Fun & productivity
+- [084](084-markdown-table-generator.md) — Markdown Table Generator (`/markdown-table-generator`) — Text & writing
+- [085](085-dice-roller.md) — Dice Roller (`/dice-roller`) — Fun & productivity
+- [086](086-random-number-generator.md) — Random Number Generator (`/random-number-generator`) — Fun & productivity

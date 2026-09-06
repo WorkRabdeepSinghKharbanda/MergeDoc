@@ -12,4 +12,4 @@ Every push to `master` is followed by a manual `vercel --prod --yes` deploy from
 
 ## Feature brain
 
-Full feature/tool inventory and product-level state (monetization, SEO, privacy, mobile, bug-audit history) lives at `.claude/brain/FEATURES.md` — read it at the start of any new session before starting work, alongside CLAUDE.md.
+Full feature/tool inventory lives at `.claude/brain/feature/` — one numbered file per tool (`001-{name}.md`, `002-{name}.md`, ...), with `000-index.md` as the entry point listing all of them. Read the index at the start of any new session before starting work, alongside CLAUDE.md. `src/lib/tools.ts` is still the code-level source of truth — if the brain disagrees, `tools.ts` wins and the brain should be regenerated to match.
