@@ -51,8 +51,10 @@ export default function SignPdf() {
     if (!canvas) return
     const rect = canvas.getBoundingClientRect()
     const ctx = canvas.getContext('2d')!
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
+    // canvas may be CSS-scaled down (max-w-full) on narrow screens, so map client coords
+    // back to the canvas's internal resolution rather than assuming a 1:1 pixel ratio.
+    const x = ((e.clientX - rect.left) / rect.width) * canvas.width
+    const y = ((e.clientY - rect.top) / rect.height) * canvas.height
     ctx.lineWidth = 2.5
     ctx.lineCap = 'round'
     ctx.strokeStyle = '#1e293b'
@@ -110,7 +112,7 @@ export default function SignPdf() {
 
           {thumbnail && (
             <div className="relative mt-4 inline-block">
-              <img src={thumbnail} alt="Page preview" className="rounded border border-slate-200 dark:border-slate-800" />
+              <img src={thumbnail} alt="Page preview" className="max-w-full rounded border border-slate-200 dark:border-slate-800" />
               <div
                 className="absolute h-6 w-16 cursor-move border-2 border-dashed border-indigo-500 bg-indigo-100/50"
                 style={{ left: `${pos.x * 100}%`, top: `${pos.y * 100}%` }}
@@ -139,7 +141,7 @@ export default function SignPdf() {
             onPointerMove={draw}
             onPointerUp={endDraw}
             onPointerLeave={endDraw}
-            className="mt-2 touch-none rounded-lg border border-slate-300 bg-white dark:border-slate-700"
+            className="mt-2 h-auto w-full max-w-[400px] touch-none rounded-lg border border-slate-300 bg-white dark:border-slate-700"
           />
           <button onClick={clearCanvas} className="ml-3 text-sm text-slate-500 underline hover:text-slate-700 dark:text-slate-400">
             Clear
