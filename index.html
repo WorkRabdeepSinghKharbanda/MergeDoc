@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#4f46e5" />
 
@@ -10,13 +14,19 @@
     <meta name="description" content="Merge, split, compress, rotate, watermark, and password-protect PDFs free, entirely in your browser. No uploads, no accounts, no file size limits." />
     <link rel="canonical" href="https://mergedoc.vercel.app/" />
     <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="author" content="MergeDoc" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="MergeDoc" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="MergeDoc — Free Online PDF Tools" />
     <meta property="og:description" content="Merge, split, compress, rotate, watermark, and password-protect PDFs free, entirely in your browser." />
     <meta property="og:url" content="https://mergedoc.vercel.app/" />
     <meta property="og:image" content="https://mergedoc.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="MergeDoc" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="MergeDoc — Free Online PDF Tools" />
@@ -33,6 +43,102 @@
         "operatingSystem": "Any",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "description": "Free browser-based PDF tools: merge, split, compress, rotate, watermark, protect, and convert PDFs."
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "MergeDoc Tools",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "url": "https://mergedoc.vercel.app/merge", "name": "Merge PDF" },
+          { "@type": "ListItem", "position": 2, "url": "https://mergedoc.vercel.app/split", "name": "Split PDF" },
+          { "@type": "ListItem", "position": 3, "url": "https://mergedoc.vercel.app/compress", "name": "Compress PDF" },
+          { "@type": "ListItem", "position": 4, "url": "https://mergedoc.vercel.app/rotate", "name": "Rotate PDF" },
+          { "@type": "ListItem", "position": 5, "url": "https://mergedoc.vercel.app/watermark", "name": "Watermark PDF" },
+          { "@type": "ListItem", "position": 6, "url": "https://mergedoc.vercel.app/protect", "name": "Protect PDF" },
+          { "@type": "ListItem", "position": 7, "url": "https://mergedoc.vercel.app/metadata", "name": "Edit Metadata" },
+          { "@type": "ListItem", "position": 8, "url": "https://mergedoc.vercel.app/reorder", "name": "Reorder Pages" },
+          { "@type": "ListItem", "position": 9, "url": "https://mergedoc.vercel.app/pdf-to-image", "name": "PDF to Image" },
+          { "@type": "ListItem", "position": 10, "url": "https://mergedoc.vercel.app/image-to-pdf", "name": "Image to PDF" },
+          { "@type": "ListItem", "position": 11, "url": "https://mergedoc.vercel.app/compare-pdf", "name": "Compare PDFs" },
+          { "@type": "ListItem", "position": 12, "url": "https://mergedoc.vercel.app/sign-pdf", "name": "Sign PDF" },
+          { "@type": "ListItem", "position": 13, "url": "https://mergedoc.vercel.app/fill-form", "name": "Fill PDF Form" },
+          { "@type": "ListItem", "position": 14, "url": "https://mergedoc.vercel.app/extract-text", "name": "Extract Text" },
+          { "@type": "ListItem", "position": 15, "url": "https://mergedoc.vercel.app/crop-pdf", "name": "Crop PDF" },
+          { "@type": "ListItem", "position": 16, "url": "https://mergedoc.vercel.app/add-page-numbers", "name": "Add Page Numbers" },
+          { "@type": "ListItem", "position": 17, "url": "https://mergedoc.vercel.app/text-to-pdf", "name": "Text to PDF" },
+          { "@type": "ListItem", "position": 18, "url": "https://mergedoc.vercel.app/redact-pdf", "name": "Redact PDF" },
+          { "@type": "ListItem", "position": 19, "url": "https://mergedoc.vercel.app/split-pdf-pages", "name": "Split PDF into Pages" },
+          { "@type": "ListItem", "position": 20, "url": "https://mergedoc.vercel.app/image-compress", "name": "Image Compressor" },
+          { "@type": "ListItem", "position": 21, "url": "https://mergedoc.vercel.app/qr-generator", "name": "QR Code Generator" },
+          { "@type": "ListItem", "position": 22, "url": "https://mergedoc.vercel.app/word-counter", "name": "Word Counter" },
+          { "@type": "ListItem", "position": 23, "url": "https://mergedoc.vercel.app/type-master", "name": "Type Master" },
+          { "@type": "ListItem", "position": 24, "url": "https://mergedoc.vercel.app/password-tool", "name": "Password Generator" },
+          { "@type": "ListItem", "position": 25, "url": "https://mergedoc.vercel.app/json-formatter", "name": "JSON Formatter" },
+          { "@type": "ListItem", "position": 26, "url": "https://mergedoc.vercel.app/unit-converter", "name": "Unit Converter" },
+          { "@type": "ListItem", "position": 27, "url": "https://mergedoc.vercel.app/base64-tool", "name": "Base64 Encoder/Decoder" },
+          { "@type": "ListItem", "position": 28, "url": "https://mergedoc.vercel.app/url-encoder", "name": "URL Encoder/Decoder" },
+          { "@type": "ListItem", "position": 29, "url": "https://mergedoc.vercel.app/case-converter", "name": "Case Converter" },
+          { "@type": "ListItem", "position": 30, "url": "https://mergedoc.vercel.app/hash-generator", "name": "Hash Generator" },
+          { "@type": "ListItem", "position": 31, "url": "https://mergedoc.vercel.app/timestamp-converter", "name": "Timestamp Converter" },
+          { "@type": "ListItem", "position": 32, "url": "https://mergedoc.vercel.app/csv-json-converter", "name": "CSV to JSON Converter" },
+          { "@type": "ListItem", "position": 33, "url": "https://mergedoc.vercel.app/text-diff", "name": "Text Diff Checker" },
+          { "@type": "ListItem", "position": 34, "url": "https://mergedoc.vercel.app/color-tool", "name": "Color Converter" },
+          { "@type": "ListItem", "position": 35, "url": "https://mergedoc.vercel.app/uuid-generator", "name": "UUID Generator" },
+          { "@type": "ListItem", "position": 36, "url": "https://mergedoc.vercel.app/lorem-generator", "name": "Lorem Ipsum Generator" },
+          { "@type": "ListItem", "position": 37, "url": "https://mergedoc.vercel.app/regex-tester", "name": "Regex Tester" },
+          { "@type": "ListItem", "position": 38, "url": "https://mergedoc.vercel.app/image-resize", "name": "Image Resizer" },
+          { "@type": "ListItem", "position": 39, "url": "https://mergedoc.vercel.app/markdown-preview", "name": "Markdown Previewer" },
+          { "@type": "ListItem", "position": 40, "url": "https://mergedoc.vercel.app/meta-tag-generator", "name": "Meta Tag Generator" },
+          { "@type": "ListItem", "position": 41, "url": "https://mergedoc.vercel.app/bmi-calculator", "name": "BMI Calculator" },
+          { "@type": "ListItem", "position": 42, "url": "https://mergedoc.vercel.app/percentage-calculator", "name": "Percentage Calculator" },
+          { "@type": "ListItem", "position": 43, "url": "https://mergedoc.vercel.app/tip-calculator", "name": "Tip Calculator" },
+          { "@type": "ListItem", "position": 44, "url": "https://mergedoc.vercel.app/age-calculator", "name": "Age Calculator" },
+          { "@type": "ListItem", "position": 45, "url": "https://mergedoc.vercel.app/number-base-converter", "name": "Number Base Converter" },
+          { "@type": "ListItem", "position": 46, "url": "https://mergedoc.vercel.app/text-encryptor", "name": "Text Encryptor" },
+          { "@type": "ListItem", "position": 47, "url": "https://mergedoc.vercel.app/text-to-speech", "name": "Text to Speech" },
+          { "@type": "ListItem", "position": 48, "url": "https://mergedoc.vercel.app/slug-generator", "name": "Slug Generator" },
+          { "@type": "ListItem", "position": 49, "url": "https://mergedoc.vercel.app/favicon-generator", "name": "Favicon Generator" },
+          { "@type": "ListItem", "position": 50, "url": "https://mergedoc.vercel.app/qr-batch-generator", "name": "Batch QR Code Generator" },
+          { "@type": "ListItem", "position": 51, "url": "https://mergedoc.vercel.app/loan-calculator", "name": "Loan & EMI Calculator" },
+          { "@type": "ListItem", "position": 52, "url": "https://mergedoc.vercel.app/discount-calculator", "name": "Discount Calculator" },
+          { "@type": "ListItem", "position": 53, "url": "https://mergedoc.vercel.app/gpa-calculator", "name": "GPA Calculator" },
+          { "@type": "ListItem", "position": 54, "url": "https://mergedoc.vercel.app/countdown-stopwatch", "name": "Countdown Timer & Stopwatch" },
+          { "@type": "ListItem", "position": 55, "url": "https://mergedoc.vercel.app/team-generator", "name": "Random Team Generator" },
+          { "@type": "ListItem", "position": 56, "url": "https://mergedoc.vercel.app/text-sorter", "name": "Text Line Sorter" },
+          { "@type": "ListItem", "position": 57, "url": "https://mergedoc.vercel.app/invoice-generator", "name": "Invoice Generator" },
+          { "@type": "ListItem", "position": 58, "url": "https://mergedoc.vercel.app/vcard-qr", "name": "vCard QR Code Generator" },
+          { "@type": "ListItem", "position": 59, "url": "https://mergedoc.vercel.app/passphrase-generator", "name": "Passphrase Generator" },
+          { "@type": "ListItem", "position": 60, "url": "https://mergedoc.vercel.app/reading-time", "name": "Reading Time & Readability" },
+          { "@type": "ListItem", "position": 61, "url": "https://mergedoc.vercel.app/pomodoro-timer", "name": "Pomodoro Timer" },
+          { "@type": "ListItem", "position": 62, "url": "https://mergedoc.vercel.app/sales-tax-calculator", "name": "Sales Tax Calculator" },
+          { "@type": "ListItem", "position": 63, "url": "https://mergedoc.vercel.app/image-converter", "name": "Image Format Converter" },
+          { "@type": "ListItem", "position": 64, "url": "https://mergedoc.vercel.app/color-blind-simulator", "name": "Color Blindness Simulator" },
+          { "@type": "ListItem", "position": 65, "url": "https://mergedoc.vercel.app/css-gradient-generator", "name": "CSS Gradient Generator" },
+          { "@type": "ListItem", "position": 66, "url": "https://mergedoc.vercel.app/css-box-shadow-generator", "name": "CSS Box Shadow Generator" },
+          { "@type": "ListItem", "position": 67, "url": "https://mergedoc.vercel.app/css-border-radius-generator", "name": "CSS Border Radius Generator" },
+          { "@type": "ListItem", "position": 68, "url": "https://mergedoc.vercel.app/barcode-generator", "name": "Barcode Generator" },
+          { "@type": "ListItem", "position": 69, "url": "https://mergedoc.vercel.app/html-entity-tool", "name": "HTML Entity Encoder/Decoder" },
+          { "@type": "ListItem", "position": 70, "url": "https://mergedoc.vercel.app/placeholder-image", "name": "Placeholder Image Generator" },
+          { "@type": "ListItem", "position": 71, "url": "https://mergedoc.vercel.app/subnet-calculator", "name": "IP Subnet Calculator" },
+          { "@type": "ListItem", "position": 72, "url": "https://mergedoc.vercel.app/qr-scanner", "name": "QR Code Scanner" },
+          { "@type": "ListItem", "position": 73, "url": "https://mergedoc.vercel.app/number-to-words", "name": "Number to Words" },
+          { "@type": "ListItem", "position": 74, "url": "https://mergedoc.vercel.app/roman-numeral-converter", "name": "Roman Numeral Converter" },
+          { "@type": "ListItem", "position": 75, "url": "https://mergedoc.vercel.app/morse-code-translator", "name": "Morse Code Translator" },
+          { "@type": "ListItem", "position": 76, "url": "https://mergedoc.vercel.app/ascii-art-generator", "name": "ASCII Art Text Generator" },
+          { "@type": "ListItem", "position": 77, "url": "https://mergedoc.vercel.app/color-palette-extractor", "name": "Color Palette Extractor" },
+          { "@type": "ListItem", "position": 78, "url": "https://mergedoc.vercel.app/word-frequency-analyzer", "name": "Word Frequency Analyzer" },
+          { "@type": "ListItem", "position": 79, "url": "https://mergedoc.vercel.app/todo-list", "name": "Todo List" },
+          { "@type": "ListItem", "position": 80, "url": "https://mergedoc.vercel.app/scratchpad", "name": "Scratchpad" },
+          { "@type": "ListItem", "position": 81, "url": "https://mergedoc.vercel.app/countdown-to-date", "name": "Countdown to Date" },
+          { "@type": "ListItem", "position": 82, "url": "https://mergedoc.vercel.app/bill-splitter", "name": "Bill Splitter" },
+          { "@type": "ListItem", "position": 83, "url": "https://mergedoc.vercel.app/decision-wheel", "name": "Decision Wheel" },
+          { "@type": "ListItem", "position": 84, "url": "https://mergedoc.vercel.app/markdown-table-generator", "name": "Markdown Table Generator" },
+          { "@type": "ListItem", "position": 85, "url": "https://mergedoc.vercel.app/dice-roller", "name": "Dice Roller" },
+          { "@type": "ListItem", "position": 86, "url": "https://mergedoc.vercel.app/random-number-generator", "name": "Random Number Generator" }
+        ]
       }
     </script>
 
