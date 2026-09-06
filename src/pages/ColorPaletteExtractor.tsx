@@ -55,7 +55,7 @@ export default function ColorPaletteExtractor() {
         />
       </div>
 
-      {preview && <img src={preview} alt="Uploaded" className="mx-auto mt-6 max-h-64 rounded-lg border border-slate-200 dark:border-slate-800" />}
+      {preview && <img src={preview} alt="Uploaded" className="mx-auto mt-6 max-h-64 max-w-full rounded-lg border border-slate-200 dark:border-slate-800" />}
 
       {busy && <p className="mt-4 text-center text-sm text-slate-500 dark:text-slate-400">Extracting…</p>}
 

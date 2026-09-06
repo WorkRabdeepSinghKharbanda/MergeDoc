@@ -82,7 +82,7 @@ export default function RedactPdf() {
 
           {thumbnail && (
             <div className="relative mt-4 inline-block">
-              <img src={thumbnail} alt="Page preview" className="rounded border border-slate-200 dark:border-slate-800" />
+              <img src={thumbnail} alt="Page preview" className="max-w-full rounded border border-slate-200 dark:border-slate-800" />
               {boxes.filter((b) => b.pageIndex === pageIndex).map((b, i) => (
                 <div
                   key={i}
