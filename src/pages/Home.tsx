@@ -2,8 +2,10 @@ import { Link } from 'react-router-dom'
 import AdSlot from '../components/AdSlot'
 import ToolCard from '../components/ToolCard'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
-import { PDF_TOOLS, OTHER_TOOLS } from '../lib/tools'
-import { CATEGORIES } from '../lib/categories'
+import { PDF_TOOLS } from '../lib/tools'
+import { CATEGORIES, toolsForCategory } from '../lib/categories'
+
+const OTHER_CATEGORIES = CATEGORIES.filter((c) => c.slug !== 'pdf-tools')
 
 function Icon({ path }: { path: string }) {
   return (
@@ -67,14 +69,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-6 pb-24">
-        <h2 className="mb-5 text-left text-sm font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">Other tools</h2>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {OTHER_TOOLS.map((tool) => (
-            <ToolCard key={tool.to} to={tool.to} title={tool.title} description={tool.description} icon={<Icon path={tool.icon} />} />
-          ))}
-        </div>
-      </section>
+      {OTHER_CATEGORIES.map((category) => (
+        <section key={category.path} className="mx-auto max-w-5xl px-6 pb-16">
+          <div className="mb-5 flex items-baseline justify-between">
+            <h2 className="text-left text-sm font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">
+              {category.title}
+            </h2>
+            <Link to={category.path} className="text-sm text-indigo-600 hover:underline dark:text-indigo-400">
+              See all &rarr;
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {toolsForCategory(category).map((tool) => (
+              <ToolCard key={tool.to} to={tool.to} title={tool.title} description={tool.description} icon={<Icon path={tool.icon} />} />
+            ))}
+          </div>
+        </section>
+      ))}
 
       <section className="border-t border-slate-100 bg-slate-50 py-16 dark:border-slate-900 dark:bg-slate-900">
         <div className="mx-auto max-w-4xl px-6 text-center">

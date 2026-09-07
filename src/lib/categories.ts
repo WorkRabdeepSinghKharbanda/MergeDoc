@@ -55,7 +55,7 @@ export const CATEGORIES: Category[] = [
       { q: 'Will image quality suffer?', a: 'Compression and format conversion involve a quality/size tradeoff you control — you can preview the result before downloading.' },
       { q: 'Do you store my images?', a: 'No. Images are processed in-memory in your browser tab and discarded when you close or refresh the page.' },
     ],
-    routes: ['/image-compress', '/image-resize', '/image-converter', '/favicon-generator', '/color-blind-simulator', '/color-palette-extractor'],
+    routes: ['/image-compress', '/image-resize', '/image-converter', '/favicon-generator', '/color-blind-simulator', '/color-palette-extractor', '/color-tool', '/placeholder-image'],
   },
   {
     slug: 'text-writing-tools',
@@ -93,7 +93,7 @@ export const CATEGORIES: Category[] = [
       '/json-formatter', '/csv-json-converter', '/base64-tool', '/url-encoder', '/html-entity-tool',
       '/hash-generator', '/uuid-generator', '/regex-tester', '/number-base-converter', '/subnet-calculator',
       '/barcode-generator', '/css-gradient-generator', '/css-box-shadow-generator', '/css-border-radius-generator',
-      '/meta-tag-generator',
+      '/meta-tag-generator', '/unit-converter', '/timestamp-converter',
     ],
   },
   {
