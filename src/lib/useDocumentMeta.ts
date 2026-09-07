@@ -35,3 +35,17 @@ export function useDocumentMeta(title: string, description: string) {
     setMeta('name', 'twitter:description', description)
   }, [title, description])
 }
+
+/** Injects a per-page JSON-LD `<script>` block (e.g. FAQPage), removed on unmount/navigation. */
+export function useJsonLd(data: object) {
+  const json = JSON.stringify(data)
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = json
+    document.head.appendChild(script)
+    return () => {
+      document.head.removeChild(script)
+    }
+  }, [json])
+}

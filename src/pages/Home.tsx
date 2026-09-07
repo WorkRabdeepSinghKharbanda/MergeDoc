@@ -3,6 +3,7 @@ import AdSlot from '../components/AdSlot'
 import ToolCard from '../components/ToolCard'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
 import { PDF_TOOLS, OTHER_TOOLS } from '../lib/tools'
+import { CATEGORIES } from '../lib/categories'
 
 function Icon({ path }: { path: string }) {
   return (
@@ -42,6 +43,20 @@ export default function Home() {
       </section>
 
       <AdSlot variant="banner" />
+
+      <section className="mx-auto max-w-5xl px-6 pb-4">
+        <div className="flex flex-wrap justify-center gap-2">
+          {CATEGORIES.map((category) => (
+            <Link
+              key={category.path}
+              to={category.path}
+              className="rounded-full border border-slate-200 px-3.5 py-1.5 text-sm text-slate-600 hover:border-indigo-300 hover:text-indigo-600 dark:border-slate-800 dark:text-slate-300 dark:hover:border-indigo-700 dark:hover:text-indigo-400"
+            >
+              {category.title}
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <section id="tools" className="mx-auto max-w-5xl scroll-mt-20 px-6 pb-16">
         <h2 className="mb-5 text-left text-sm font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">PDF tools</h2>

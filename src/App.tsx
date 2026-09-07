@@ -89,6 +89,8 @@ import MarkdownTableGenerator from './pages/MarkdownTableGenerator'
 import DiceRoller from './pages/DiceRoller'
 import RandomNumberGenerator from './pages/RandomNumberGenerator'
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import CategoryPage from './pages/CategoryPage'
+import { CATEGORIES } from './lib/categories'
 
 export default function App() {
   return (
@@ -184,6 +186,9 @@ export default function App() {
             <Route path="/dice-roller" element={<DiceRoller />} />
             <Route path="/random-number-generator" element={<RandomNumberGenerator />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            {CATEGORIES.map((category) => (
+              <Route key={category.path} path={category.path} element={<CategoryPage category={category} />} />
+            ))}
           </Route>
         </Routes>
       </BrowserRouter>

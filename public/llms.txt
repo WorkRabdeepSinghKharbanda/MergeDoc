@@ -1,0 +1,105 @@
+# MergeDoc
+
+> Free, client-side PDF and utility tools. Every tool runs entirely in the browser — files and text are never uploaded to a server, there are no accounts, and there is no usage limit.
+
+MergeDoc is a single-page web app offering 86 tools across PDF editing, image processing, text/writing utilities, developer tools, QR codes, calculators, security/privacy, and productivity. All processing happens client-side using JavaScript (PDF manipulation, canvas image processing, Web Crypto), so it is safe to use with sensitive or private documents.
+
+## Categories
+
+- [PDF Tools](https://mergedoc.vercel.app/pdf-tools): merge, split, compress, rotate, watermark, protect, sign, and convert PDFs.
+- [Image Tools](https://mergedoc.vercel.app/image-tools): compress, resize, and convert images.
+- [Text & Writing Tools](https://mergedoc.vercel.app/text-tools): word counter, diff checker, case converter, and more.
+- [Developer Tools](https://mergedoc.vercel.app/developer-tools): JSON formatter, regex tester, encoders, hash/UUID generators, CSS generators.
+- [QR Code Tools](https://mergedoc.vercel.app/qr-code-tools): QR code generation, batch generation, and scanning.
+- [Calculators](https://mergedoc.vercel.app/calculators): BMI, loan, tip, age, GPA, and more.
+- [Security & Privacy Tools](https://mergedoc.vercel.app/security-tools): password generation and text encryption.
+- [Fun & Productivity Tools](https://mergedoc.vercel.app/productivity-tools): pomodoro timer, todo list, countdown, and more.
+
+## All tools
+
+- [Merge PDF](https://mergedoc.vercel.app/merge): Combine multiple PDFs into a single file, in the order you choose.
+- [Split PDF](https://mergedoc.vercel.app/split): Pull specific pages or ranges out of a PDF into a new file.
+- [Compress PDF](https://mergedoc.vercel.app/compress): Shrink a PDF’s file size for easier sharing and storage.
+- [Rotate PDF](https://mergedoc.vercel.app/rotate): Fix sideways or upside-down pages, 90° at a time.
+- [Watermark PDF](https://mergedoc.vercel.app/watermark): Stamp a diagonal text watermark across every page.
+- [Protect PDF](https://mergedoc.vercel.app/protect): Add or remove a password on a PDF.
+- [Edit Metadata](https://mergedoc.vercel.app/metadata): View and edit a PDF’s title, author, and keywords.
+- [Reorder Pages](https://mergedoc.vercel.app/reorder): Visually reorder or delete pages, then save.
+- [PDF to Image](https://mergedoc.vercel.app/pdf-to-image): Convert every page of a PDF into a JPG image.
+- [Image to PDF](https://mergedoc.vercel.app/image-to-pdf): Combine JPG or PNG images into a single PDF.
+- [Compare PDFs](https://mergedoc.vercel.app/compare-pdf): See word-level differences between two PDFs.
+- [Sign PDF](https://mergedoc.vercel.app/sign-pdf): Draw a signature and place it on a page.
+- [Fill PDF Form](https://mergedoc.vercel.app/fill-form): Fill in a PDF form’s fields and download it.
+- [Extract Text](https://mergedoc.vercel.app/extract-text): Pull the plain text out of a PDF.
+- [Crop PDF](https://mergedoc.vercel.app/crop-pdf): Trim margins from every page.
+- [Add Page Numbers](https://mergedoc.vercel.app/add-page-numbers): Stamp page numbers onto every page.
+- [Text to PDF](https://mergedoc.vercel.app/text-to-pdf): Turn plain text into a downloadable PDF.
+- [Redact PDF](https://mergedoc.vercel.app/redact-pdf): Black out sensitive regions of a PDF page.
+- [Split PDF into Pages](https://mergedoc.vercel.app/split-pdf-pages): Split every page of a PDF into its own file.
+- [Image Compressor](https://mergedoc.vercel.app/image-compress): Shrink a JPG or PNG’s file size.
+- [QR Code Generator](https://mergedoc.vercel.app/qr-generator): Turn any text or URL into a QR code.
+- [Word Counter](https://mergedoc.vercel.app/word-counter): Count words, characters, sentences, and paragraphs.
+- [Type Master](https://mergedoc.vercel.app/type-master): Test your typing speed and accuracy in words per minute.
+- [Password Generator](https://mergedoc.vercel.app/password-tool): Generate strong passwords and check password strength.
+- [JSON Formatter](https://mergedoc.vercel.app/json-formatter): Format, validate, and minify JSON.
+- [Unit Converter](https://mergedoc.vercel.app/unit-converter): Convert length, weight, temperature, and data units.
+- [Base64 Encoder/Decoder](https://mergedoc.vercel.app/base64-tool): Encode or decode Base64 text.
+- [URL Encoder/Decoder](https://mergedoc.vercel.app/url-encoder): Encode or decode URL components.
+- [Case Converter](https://mergedoc.vercel.app/case-converter): Convert text between UPPERCASE, Title Case, camelCase, and more.
+- [Hash Generator](https://mergedoc.vercel.app/hash-generator): Generate SHA-1/256/384/512 hashes of text.
+- [Timestamp Converter](https://mergedoc.vercel.app/timestamp-converter): Convert Unix epoch time to and from a readable date.
+- [CSV ⇄ JSON Converter](https://mergedoc.vercel.app/csv-json-converter): Convert CSV to JSON or JSON to CSV.
+- [Text Diff Checker](https://mergedoc.vercel.app/text-diff): Compare two texts and see word-level differences.
+- [Color Converter](https://mergedoc.vercel.app/color-tool): Convert HEX/RGB/HSL and check WCAG contrast ratios.
+- [UUID Generator](https://mergedoc.vercel.app/uuid-generator): Generate random UUID v4 identifiers.
+- [Lorem Ipsum Generator](https://mergedoc.vercel.app/lorem-generator): Generate placeholder text for mockups.
+- [Regex Tester](https://mergedoc.vercel.app/regex-tester): Test a regular expression against sample text.
+- [Image Resizer](https://mergedoc.vercel.app/image-resize): Resize a JPG or PNG to exact dimensions.
+- [Markdown Previewer](https://mergedoc.vercel.app/markdown-preview): Preview Markdown rendered as HTML live.
+- [Meta Tag Generator](https://mergedoc.vercel.app/meta-tag-generator): Generate SEO and Open Graph meta tags with a live preview.
+- [BMI Calculator](https://mergedoc.vercel.app/bmi-calculator): Calculate your Body Mass Index from height and weight.
+- [Percentage Calculator](https://mergedoc.vercel.app/percentage-calculator): Calculate percentages, percentage change, and percentage of a value.
+- [Tip Calculator](https://mergedoc.vercel.app/tip-calculator): Calculate tip amount and split the bill.
+- [Age Calculator](https://mergedoc.vercel.app/age-calculator): Calculate exact age and days to your next birthday.
+- [Number Base Converter](https://mergedoc.vercel.app/number-base-converter): Convert numbers between binary, octal, decimal, and hex.
+- [Text Encryptor](https://mergedoc.vercel.app/text-encryptor): Encrypt or decrypt text with a passphrase (AES-256-GCM).
+- [Text to Speech](https://mergedoc.vercel.app/text-to-speech): Have your browser read typed text aloud.
+- [Slug Generator](https://mergedoc.vercel.app/slug-generator): Turn a title into a clean URL slug.
+- [Favicon Generator](https://mergedoc.vercel.app/favicon-generator): Generate favicon PNGs in every common size from one image.
+- [Batch QR Code Generator](https://mergedoc.vercel.app/qr-batch-generator): Generate multiple QR codes from a list of text or URLs.
+- [Loan & EMI Calculator](https://mergedoc.vercel.app/loan-calculator): Calculate your monthly loan payment and total interest.
+- [Discount Calculator](https://mergedoc.vercel.app/discount-calculator): Calculate the sale price after a percentage discount.
+- [GPA Calculator](https://mergedoc.vercel.app/gpa-calculator): Calculate your grade point average from grades and credits.
+- [Countdown Timer & Stopwatch](https://mergedoc.vercel.app/countdown-stopwatch): A simple countdown timer and stopwatch.
+- [Random Team Generator](https://mergedoc.vercel.app/team-generator): Split a list of names into random, balanced teams.
+- [Text Line Sorter](https://mergedoc.vercel.app/text-sorter): Sort, deduplicate, and clean up a list of lines.
+- [Invoice Generator](https://mergedoc.vercel.app/invoice-generator): Create a simple invoice PDF from a form.
+- [vCard QR Code Generator](https://mergedoc.vercel.app/vcard-qr): Turn contact details into a scannable QR code.
+- [Passphrase Generator](https://mergedoc.vercel.app/passphrase-generator): Generate a memorable, multi-word passphrase.
+- [Reading Time & Readability](https://mergedoc.vercel.app/reading-time): Estimate reading time and Flesch readability score.
+- [Pomodoro Timer](https://mergedoc.vercel.app/pomodoro-timer): A focus timer using the Pomodoro technique.
+- [Sales Tax Calculator](https://mergedoc.vercel.app/sales-tax-calculator): Add or remove sales tax from a price.
+- [Image Format Converter](https://mergedoc.vercel.app/image-converter): Convert images between PNG, JPEG, and WebP.
+- [Color Blindness Simulator](https://mergedoc.vercel.app/color-blind-simulator): Preview how an image looks with color vision deficiencies.
+- [CSS Gradient Generator](https://mergedoc.vercel.app/css-gradient-generator): Design a linear or radial gradient and copy the CSS.
+- [CSS Box Shadow Generator](https://mergedoc.vercel.app/css-box-shadow-generator): Design a box shadow and copy the CSS.
+- [CSS Border Radius Generator](https://mergedoc.vercel.app/css-border-radius-generator): Design a per-corner border radius and copy the CSS.
+- [Barcode Generator](https://mergedoc.vercel.app/barcode-generator): Generate a Code 128 barcode from text.
+- [HTML Entity Encoder/Decoder](https://mergedoc.vercel.app/html-entity-tool): Encode or decode HTML entities.
+- [Placeholder Image Generator](https://mergedoc.vercel.app/placeholder-image): Generate a placeholder image at any size and color.
+- [IP Subnet Calculator](https://mergedoc.vercel.app/subnet-calculator): Calculate network, broadcast, and usable host range from a CIDR block.
+- [QR Code Scanner](https://mergedoc.vercel.app/qr-scanner): Decode a QR code from an uploaded image.
+- [Number to Words](https://mergedoc.vercel.app/number-to-words): Convert a number into written-out English words.
+- [Roman Numeral Converter](https://mergedoc.vercel.app/roman-numeral-converter): Convert between numbers and Roman numerals.
+- [Morse Code Translator](https://mergedoc.vercel.app/morse-code-translator): Translate text to and from Morse code, with audio playback.
+- [ASCII Art Text Generator](https://mergedoc.vercel.app/ascii-art-generator): Turn text into a block-letter ASCII banner.
+- [Color Palette Extractor](https://mergedoc.vercel.app/color-palette-extractor): Extract the dominant colors from an image.
+- [Word Frequency Analyzer](https://mergedoc.vercel.app/word-frequency-analyzer): Find the most frequently used words in a piece of text.
+- [Todo List](https://mergedoc.vercel.app/todo-list): A simple todo list that saves to your browser.
+- [Scratchpad](https://mergedoc.vercel.app/scratchpad): A notepad that autosaves to your browser.
+- [Countdown to Date](https://mergedoc.vercel.app/countdown-to-date): Count down to any future date.
+- [Bill Splitter](https://mergedoc.vercel.app/bill-splitter): Split a shared bill fairly and see who owes whom.
+- [Decision Wheel](https://mergedoc.vercel.app/decision-wheel): Spin a wheel to make a random choice.
+- [Markdown Table Generator](https://mergedoc.vercel.app/markdown-table-generator): Convert delimited data into a Markdown table.
+- [Dice Roller](https://mergedoc.vercel.app/dice-roller): Roll any number of dice with any number of sides.
+- [Random Number Generator](https://mergedoc.vercel.app/random-number-generator): Generate random numbers within a range.
