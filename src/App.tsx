@@ -93,6 +93,8 @@ import CategoryPage from './pages/CategoryPage'
 import { CATEGORIES } from './lib/categories'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
+import ToolLandingPage from './pages/ToolLandingPage'
+import { TOOL_LANDINGS } from './lib/toolLandings'
 
 export default function App() {
   return (
@@ -192,6 +194,9 @@ export default function App() {
             <Route path="/blog/:slug" element={<BlogPost />} />
             {CATEGORIES.map((category) => (
               <Route key={category.path} path={category.path} element={<CategoryPage category={category} />} />
+            ))}
+            {TOOL_LANDINGS.map((landing) => (
+              <Route key={landing.path} path={landing.path} element={<ToolLandingPage landing={landing} />} />
             ))}
           </Route>
         </Routes>

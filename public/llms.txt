@@ -23,6 +23,16 @@ MergeDoc is a single-page web app offering 86 tools across PDF editing, image pr
 - [QR Codes 101: Static vs Dynamic, and When to Use Each](https://mergedoc.vercel.app/blog/qr-codes-static-vs-dynamic)
 - [AES-256 Explained: How MergeDoc Encrypts Your Text Client-Side](https://mergedoc.vercel.app/blog/aes-256-text-encryption-explained)
 - [The Case for Client-Side Tools: Why Your Files Shouldn't Have to Leave Your Browser](https://mergedoc.vercel.app/blog/why-client-side-tools-matter)
+- [How to Resize an Image Without Losing Quality](https://mergedoc.vercel.app/blog/resize-image-without-losing-quality)
+- [JSON Formatting 101: Why Minified JSON Breaks Debugging](https://mergedoc.vercel.app/blog/minified-json-debugging)
+- [Regex Basics: How to Actually Test a Pattern Before Using It](https://mergedoc.vercel.app/blog/how-to-test-a-regex)
+- [UUIDs Explained: Why v4 Is Random, Not Sequential](https://mergedoc.vercel.app/blog/uuid-v4-explained)
+- [The Loan/EMI Formula Behind Every Amortization Calculator](https://mergedoc.vercel.app/blog/loan-emi-formula-explained)
+- [Base64 Encoding: What It's For (and What It Isn't)](https://mergedoc.vercel.app/blog/base64-encoding-what-its-for)
+- [Flesch Reading Ease: What Your Readability Score Actually Means](https://mergedoc.vercel.app/blog/flesch-reading-ease-explained)
+- [Color Contrast and WCAG: Why Some Text Combinations Fail Accessibility](https://mergedoc.vercel.app/blog/wcag-color-contrast-explained)
+- [The Pomodoro Technique: Why 25 Minutes Works](https://mergedoc.vercel.app/blog/pomodoro-technique-why-25-minutes)
+- [CSV vs JSON: When to Use Each Format](https://mergedoc.vercel.app/blog/csv-vs-json-when-to-use-each)
 
 ## All tools
 

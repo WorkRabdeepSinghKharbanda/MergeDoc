@@ -189,6 +189,244 @@ Client-side processing isn't free of tradeoffs — it's worth being honest about
 
 In exchange, you get files that never leave your device, no accounts, no arbitrary rate limits, and tools that keep working offline once loaded. For anything involving a document you'd rather not hand to an unknown third-party server, that trade is worth making.`,
   },
+  {
+    slug: 'resize-image-without-losing-quality',
+    title: 'How to Resize an Image Without Losing Quality',
+    description: 'What actually causes quality loss when resizing, and how to avoid it for both shrinking and enlarging.',
+    date: '2026-03-18',
+    content: `"Resizing loses quality" is only half true — it depends on which direction you're going, and what's causing the loss.
+
+## Shrinking an image
+
+Shrinking (downscaling) rarely loses meaningful quality on its own — you have more source pixels than the target needs, so a good resampling algorithm can produce a sharp, accurate smaller image. [Image Resizer](/image-resize) handles this using the canvas API's built-in image smoothing.
+
+The quality loss people notice when shrinking usually comes from a *second* factor: aggressive JPEG re-compression applied at the same time. If you need both a smaller resolution and a smaller file size, treat them as separate steps mentally, even if one tool does both.
+
+## Enlarging an image
+
+Enlarging (upscaling) is the direction that genuinely loses quality, because the algorithm has to invent pixel data that was never captured. There's a hard ceiling here: no amount of resizing software recovers detail that isn't in the original. If you need a much larger version of a small image, the honest answer is that you need a higher-resolution source, not a smarter resize.
+
+## Practical guidance
+
+- Downscaling for a smaller file: safe, minimal visible loss
+- Upscaling more than roughly 2x: expect visible softness, this is a physical limit, not a tool limitation
+- Need a specific file size, not just dimensions? Use [Image Compressor](/image-compress) after resizing, so you're not fighting resolution and compression at once`,
+  },
+  {
+    slug: 'minified-json-debugging',
+    title: 'JSON Formatting 101: Why Minified JSON Breaks Debugging',
+    description: 'Minified JSON is fine for machines and a nightmare for humans — here\'s why formatting it back out matters.',
+    date: '2026-03-25',
+    content: `JSON minification strips every non-essential character — whitespace, newlines, indentation — to make a payload smaller over the wire. That's a genuinely good idea for an API response a machine will parse. It's a terrible idea for a human trying to find one wrong field.
+
+## What minification actually removes
+
+A minified JSON blob is functionally identical to its formatted version — same keys, same values, same structure. What's gone is purely visual: the line breaks and indentation that let a human eye track which closing brace matches which opening one.
+
+## Why that matters when debugging
+
+When an API call fails validation or returns unexpected data, you usually need to answer one question: which field, nested how deep, has the wrong value? On a single unbroken line of minified JSON, that means manually counting braces. Formatted, with each nesting level indented, the same question is answered by just looking at where your eye lands.
+
+[JSON Formatter](/json-formatter) does exactly this conversion, plus validates the JSON is well-formed in the first place — a common source of confusion is a payload that isn't actually valid JSON at all (a trailing comma, an unescaped quote), which a minifier will happily choke on with an unhelpful error.
+
+## When to minify instead
+
+Once you're done debugging and the JSON is headed into a request body, a config file that ships to production, or anywhere payload size matters, minify it back down. The same tool does both directions — format while you're working on it, minify when you're done.`,
+  },
+  {
+    slug: 'how-to-test-a-regex',
+    title: 'Regex Basics: How to Actually Test a Pattern Before Using It',
+    description: 'A regular expression that looks right can still fail on real input — here\'s how to catch that before it ships.',
+    date: '2026-04-02',
+    content: `A regular expression is easy to write and surprisingly easy to get subtly wrong — matching too much, too little, or breaking entirely on an edge case you didn't think to try.
+
+## The mistake: testing against only the input you had in mind
+
+It's tempting to write a pattern, glance at it, and trust it because it *looks* right. The problem is a regex's behavior on edge cases (empty strings, extra whitespace, unicode characters, multiple matches on one line) is rarely obvious just from reading the pattern.
+
+## Test against a spread of real inputs
+
+Before using a pattern anywhere that matters — form validation, a data-cleaning script — run it against:
+
+- The typical case you're designing for
+- An empty or minimal input
+- An input with extra whitespace or punctuation nearby
+- A case specifically designed to *not* match, to confirm it correctly rejects
+
+[Regex Tester](/regex-tester) lets you do this interactively: paste a pattern, paste sample text, and see exactly what matches (and what doesn't) highlighted directly in the text, instead of guessing from the pattern alone.
+
+## A common trap: greedy vs lazy quantifiers
+
+\`+\` and \`*\` are greedy by default — they'll match as much as possible, which can grab far more than you intended when there are multiple candidates in a line (e.g. matching everything between the *first* and *last* quote instead of one pair at a time). Adding \`?\` after a quantifier (\`+?\`, \`*?\`) makes it lazy — matching as little as possible instead. This single detail causes a large share of "why did my regex match too much" bugs.`,
+  },
+  {
+    slug: 'uuid-v4-explained',
+    title: 'UUIDs Explained: Why v4 Is Random, Not Sequential',
+    description: 'What a UUID actually guarantees, why version 4 is the common default, and when a UUID is the wrong choice.',
+    date: '2026-04-09',
+    content: `A UUID (Universally Unique Identifier) is a 128-bit value formatted as 32 hex digits split into five groups. What most people actually want to know is: how does something generated with no central coordination avoid colliding with another one generated somewhere else entirely?
+
+## Version 4: random, not sequential
+
+[UUID Generator](/uuid-generator) produces version 4 UUIDs — the bits (aside from a few fixed version/variant bits) are filled with cryptographically random data. There's no counter, timestamp, or machine identifier baked in; two v4 UUIDs generated a millisecond apart on the same machine are unrelated to each other.
+
+The collision math is what makes this safe: with 122 random bits, you'd need to generate roughly a billion billion (10^18) UUIDs before a 50% chance of any collision — a number large enough that in practice it doesn't happen.
+
+## When a UUID is the right choice
+
+- Distributed systems generating IDs with no shared database or coordination
+- Anything where you don't want the ID to leak information (a sequential integer ID reveals how many records exist and in what order)
+
+## When it's the wrong choice
+
+- If you need IDs to sort by creation time, a random v4 UUID actively works against you — every new row scatters through an index instead of appending. A timestamp-ordered ID scheme (or a plain auto-increment integer) is the better fit there.
+- If storage size matters a lot, a UUID (16 bytes) is heavier than a 4- or 8-byte integer.
+
+The right identifier scheme depends on whether you need "guaranteed no collision with no coordination" or "sorts naturally by time" — they're different requirements, and a UUID only solves the first one.`,
+  },
+  {
+    slug: 'loan-emi-formula-explained',
+    title: 'The Loan/EMI Formula Behind Every Amortization Calculator',
+    description: 'What the monthly payment formula actually computes, and why the same loan can look different at different terms.',
+    date: '2026-04-17',
+    content: `Every loan or EMI calculator, including [Loan & EMI Calculator](/loan-calculator), is built on the same standard amortization formula. Understanding it explains why extending a loan's term lowers the monthly payment but increases the total interest paid.
+
+## The formula
+
+The monthly payment for a fixed-rate loan is:
+
+\`M = P × [r(1+r)^n] / [(1+r)^n − 1]\`
+
+Where P is the loan principal, r is the monthly interest rate (annual rate divided by 12), and n is the number of monthly payments.
+
+## Why a longer term lowers the payment but raises total cost
+
+Stretching n (the number of payments) across more months spreads the same principal over more installments, which lowers each individual payment — but it also means interest keeps accruing on the outstanding balance for longer. The result: a 30-year loan has a smaller monthly payment than a 15-year loan for the same principal and rate, but pays substantially more interest over the loan's life.
+
+## Why early payments are mostly interest
+
+In the early months of a loan, most of each payment goes to interest, not principal — because interest is calculated on the current outstanding balance, which is still close to the full loan amount. As the balance shrinks, a growing share of each fixed payment goes toward principal instead. This is why paying slightly extra early in a loan's life has an outsized effect on total interest paid compared to the same extra payment made later.`,
+  },
+  {
+    slug: 'base64-encoding-what-its-for',
+    title: 'Base64 Encoding: What It\'s For (and What It Isn\'t)',
+    description: 'Base64 is not encryption. Here\'s what it actually solves, and the mistake of using it for anything security-related.',
+    date: '2026-04-24',
+    content: `Base64 shows up constantly — in image data URIs, email attachments, API tokens — but its purpose is routinely confused with encryption. It isn't encryption. It's a format conversion.
+
+## What Base64 actually does
+
+Many systems (older email protocols, some text-based data formats) can only reliably carry plain ASCII text — not arbitrary binary bytes. Base64 solves that by re-encoding binary data as a restricted set of 64 printable ASCII characters, so it can travel safely through systems that would otherwise mangle raw binary.
+
+## Why it's not security
+
+Base64 is fully reversible with zero secret information — anyone can decode it instantly with [Base64 Encoder/Decoder](/base64-tool) or a one-line command. There's no key, no passphrase, nothing hidden. If you see a Base64 string and assume it's "encoded" in a way that protects its contents, that assumption is wrong; it protects nothing.
+
+A surprising number of real security issues have come from someone Base64-encoding a password or API key and treating that as sufficient protection. It is exactly as protected as writing it in plain text and reversing the letters.
+
+## What to use instead, for actual secrecy
+
+If you need to keep something confidential, you need real encryption — a scheme like AES with a secret key, not a reversible format conversion. [Text Encryptor](/text-encryptor) uses AES-256-GCM for that purpose; Base64 is simply the wrong tool for that job, however often it gets used as one.`,
+  },
+  {
+    slug: 'flesch-reading-ease-explained',
+    title: 'Flesch Reading Ease: What Your Readability Score Actually Means',
+    description: 'The formula behind the readability score, what a high or low number means, and its real limitations.',
+    date: '2026-05-01',
+    content: `[Reading Time & Readability](/reading-time) reports a Flesch Reading Ease score alongside estimated reading time. The number can look arbitrary if you don't know what it's measuring.
+
+## The formula
+
+Flesch Reading Ease is computed from two structural signals: average sentence length (words per sentence) and average word length (syllables per word). Longer sentences and longer words both push the score down; shorter ones push it up. The scale runs roughly 0–100, with higher meaning easier to read.
+
+## What the score ranges mean
+
+- 90–100: very easy, understandable by an 11-year-old
+- 60–70: plain English, easily understood by most adults
+- 30–50: fairly difficult, best suited to college-level readers
+- 0–30: very difficult, dense academic or legal writing
+
+## What it deliberately ignores
+
+The formula only looks at sentence and word length — it has no concept of vocabulary difficulty, jargon, ambiguity, or whether the ideas themselves are complex. A sentence built entirely of short, simple-looking words can still score "easy" while being confusing or misleading in meaning. Readability scores are a useful structural proxy, not a judgment of whether writing is actually clear.
+
+## Practical use
+
+Use the score as a signal, not a target to game — chopping every sentence in half to inflate the number produces choppy, worse writing, not better communication. It's most useful as a comparison: is this draft more or less structurally dense than the last one, for a similar audience.`,
+  },
+  {
+    slug: 'wcag-color-contrast-explained',
+    title: 'Color Contrast and WCAG: Why Some Text Combinations Fail Accessibility',
+    description: 'What a contrast ratio actually measures, the WCAG thresholds, and why light gray text is a common accessibility bug.',
+    date: '2026-05-08',
+    content: `Low-contrast text — light gray on white being the classic offender — is one of the most common accessibility failures on the web, and one of the easiest to catch before shipping.
+
+## What a contrast ratio measures
+
+WCAG contrast ratio compares the relative luminance of the foreground (text) color against the background color, producing a ratio from 1:1 (identical, invisible) up to 21:1 (pure black on pure white). [Color Converter](/color-tool) computes this ratio directly from any two HEX/RGB/HSL colors.
+
+## The thresholds that matter
+
+- **4.5:1** — minimum for normal-sized text to meet WCAG AA, the baseline most legal and organizational accessibility standards require
+- **3:1** — minimum for large text (roughly 18pt+, or bold 14pt+), since bigger text is inherently easier to distinguish
+- **7:1** — the stricter AAA level, for content that needs to be readable in poor lighting or by users with low vision
+
+## Why this matters beyond compliance
+
+Low contrast doesn't only affect people with diagnosed vision impairments — it affects anyone reading on a low-quality screen, in bright sunlight, or simply while tired. A design that "looks fine" on a calibrated monitor in a dim office can be nearly unreadable in the conditions most people actually use their phones.
+
+## The common failure mode
+
+Light gray text on a white background is popular in modern design because it looks subtle and clean — and it very often falls below 4.5:1 without anyone checking. Running your actual foreground/background pair through a contrast checker before shipping catches this in seconds, rather than after a complaint or an accessibility audit.`,
+  },
+  {
+    slug: 'pomodoro-technique-why-25-minutes',
+    title: 'The Pomodoro Technique: Why 25 Minutes Works',
+    description: 'The reasoning behind the pomodoro interval, and how to adapt it when 25 minutes doesn\'t fit your work.',
+    date: '2026-05-15',
+    content: `The Pomodoro Technique — work for a fixed interval, then take a short break — is simple enough to sound arbitrary. The 25-minute default has a real rationale behind it, even if the exact number isn't magic.
+
+## The core idea: bounded, undistracted focus
+
+The technique's actual mechanism isn't the specific number of minutes — it's converting an open-ended, vague task ("work on this for a while") into a bounded commitment ("focus on just this for 25 minutes, then you get a break"). A bounded interval is psychologically easier to start than an open-ended one, which is most of the technique's value.
+
+## Why roughly 25 minutes specifically
+
+25 minutes is short enough that most people can sustain real focus for the whole interval without their attention degrading, but long enough to make meaningful progress on a task rather than just orienting toward it. The 5-minute break that follows is deliberately short — long enough to reset attention, short enough that momentum isn't lost.
+
+## When to adjust it
+
+The specific numbers are a starting point, not a law:
+
+- Deep, hard-to-re-enter work (writing, complex debugging) often benefits from longer intervals, since 25 minutes may end just as you're getting into flow
+- Shallow, high-interruption work (email, quick admin tasks) can work fine with shorter intervals
+- After roughly four intervals, a longer break (15–30 minutes) is the traditional recommendation, to avoid accumulating fatigue across a full day
+
+[Pomodoro Timer](/pomodoro-timer) runs the standard 25/5 pattern by default — treat it as a default worth adjusting once you know how your own attention actually behaves.`,
+  },
+  {
+    slug: 'csv-vs-json-when-to-use-each',
+    title: 'CSV vs JSON: When to Use Each Format',
+    description: 'Two very different data shapes that get compared constantly — here\'s the actual deciding factor.',
+    date: '2026-05-22',
+    content: `CSV and JSON solve overlapping but genuinely different problems. Picking between them isn't about which is "better" — it's about whether your data is uniformly tabular or has real structure.
+
+## CSV: flat, tabular, spreadsheet-shaped
+
+CSV is a natural fit when every record has exactly the same fields, with no nesting — a list of names and emails, a table of transactions, an export a spreadsheet can open directly. Its simplicity is the whole point: any tool from Excel to a one-line shell script can read it.
+
+CSV's limitation is exactly that flatness: it has no native way to represent a record with a nested list or an optional sub-object. Force that kind of data into CSV and you end up with awkward workarounds — flattened column names, repeated rows, delimiter escaping headaches.
+
+## JSON: nested, structured, code-shaped
+
+JSON handles nested structure naturally — an order with a list of line items, a user record with an optional array of addresses, deeply nested configuration. It's the natural fit for anything that isn't uniformly tabular, and it's what most APIs speak natively.
+
+Its tradeoff is verbosity and tooling: a human can't easily eyeball a large JSON file the way they can skim a CSV in a spreadsheet, and not every tool ingests it as readily.
+
+## Converting between them
+
+When you need to move data between a spreadsheet-shaped tool and a code-shaped one, [CSV ⇄ JSON Converter](/csv-json-converter) converts either direction. The conversion is lossless for flat data — but converting a nested JSON structure to CSV will need that structure flattened first, since CSV simply has nowhere to put a nested list.`,
+  },
 ]
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
