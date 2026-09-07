@@ -62,6 +62,9 @@ export default function NavHeader() {
           <Link to="/#tools" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800">
             All tools
           </Link>
+          <Link to="/blog" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800">
+            Blog
+          </Link>
         </nav>
 
         <div className="flex items-center gap-2">
@@ -89,13 +92,16 @@ export default function NavHeader() {
             ))}
           </div>
           <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">Other tools</p>
-          <div className="flex flex-col gap-1">
+          <div className="mb-4 flex flex-col gap-1">
             {OTHER_TOOLS.map((tool) => (
               <Link key={tool.to} to={tool.to} onClick={() => setMobileOpen(false)} className="rounded-lg px-2 py-2 text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800">
                 {tool.title}
               </Link>
             ))}
           </div>
+          <Link to="/blog" onClick={() => setMobileOpen(false)} className="rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800">
+            Blog
+          </Link>
         </div>
       )}
     </header>

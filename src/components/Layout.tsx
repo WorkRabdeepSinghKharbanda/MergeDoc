@@ -13,9 +13,14 @@ export default function Layout() {
 
       <footer className="border-t border-slate-200 py-8 text-center text-sm text-slate-400 dark:border-slate-800 dark:text-slate-600">
         <p>MergeDoc — PDF tools that run entirely in your browser. No uploads, no servers.</p>
-        <Link to="/privacy-policy" className="mt-2 inline-block underline hover:text-slate-600 dark:hover:text-slate-400">
-          Privacy Policy
-        </Link>
+        <div className="mt-2 flex justify-center gap-4">
+          <Link to="/blog" className="underline hover:text-slate-600 dark:hover:text-slate-400">
+            Blog
+          </Link>
+          <Link to="/privacy-policy" className="underline hover:text-slate-600 dark:hover:text-slate-400">
+            Privacy Policy
+          </Link>
+        </div>
       </footer>
 
       <ConsentBanner />

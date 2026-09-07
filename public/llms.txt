@@ -15,6 +15,15 @@ MergeDoc is a single-page web app offering 86 tools across PDF editing, image pr
 - [Security & Privacy Tools](https://mergedoc.vercel.app/security-tools): password generation and text encryption.
 - [Fun & Productivity Tools](https://mergedoc.vercel.app/productivity-tools): pomodoro timer, todo list, countdown, and more.
 
+## Blog
+
+- [How to Merge PDF Files Without Uploading Them Anywhere](https://mergedoc.vercel.app/blog/merge-pdf-without-uploading)
+- [5 Ways to Reduce a PDF's File Size](https://mergedoc.vercel.app/blog/reduce-pdf-file-size)
+- [How to Password Protect a PDF (and Remove a Password Later)](https://mergedoc.vercel.app/blog/password-protect-pdf-guide)
+- [QR Codes 101: Static vs Dynamic, and When to Use Each](https://mergedoc.vercel.app/blog/qr-codes-static-vs-dynamic)
+- [AES-256 Explained: How MergeDoc Encrypts Your Text Client-Side](https://mergedoc.vercel.app/blog/aes-256-text-encryption-explained)
+- [The Case for Client-Side Tools: Why Your Files Shouldn't Have to Leave Your Browser](https://mergedoc.vercel.app/blog/why-client-side-tools-matter)
+
 ## All tools
 
 - [Merge PDF](https://mergedoc.vercel.app/merge): Combine multiple PDFs into a single file, in the order you choose.

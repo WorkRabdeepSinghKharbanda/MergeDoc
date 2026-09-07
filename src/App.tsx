@@ -91,6 +91,8 @@ import RandomNumberGenerator from './pages/RandomNumberGenerator'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import CategoryPage from './pages/CategoryPage'
 import { CATEGORIES } from './lib/categories'
+import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
 
 export default function App() {
   return (
@@ -186,6 +188,8 @@ export default function App() {
             <Route path="/dice-roller" element={<DiceRoller />} />
             <Route path="/random-number-generator" element={<RandomNumberGenerator />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             {CATEGORIES.map((category) => (
               <Route key={category.path} path={category.path} element={<CategoryPage category={category} />} />
             ))}
