@@ -22,7 +22,11 @@ const SIZE = {
  * on every visit. Falls back to a dashed placeholder only when no publisher ID is set, so
  * layout/spacing stays identical before and after ads go live.
  */
-export default function AdSlot({ variant = 'banner', slot = '0000000000' }: Props) {
+// Real "CommonAd" unit ID from the AdSense dashboard — used as the shared default across every
+// AdSlot placement unless a page passes a more specific one.
+const DEFAULT_SLOT = '3418754801'
+
+export default function AdSlot({ variant = 'banner', slot = DEFAULT_SLOT }: Props) {
   const insRef = useRef<HTMLModElement>(null)
   const live = isAdsConfigured()
 

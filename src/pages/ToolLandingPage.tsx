@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import AdSlot from '../components/AdSlot'
+import RelatedGuides from '../components/RelatedGuides'
 import { useDocumentMeta, useJsonLd } from '../lib/useDocumentMeta'
 import type { ToolLanding } from '../lib/toolLandings'
 
@@ -59,6 +60,8 @@ export default function ToolLandingPage({ landing }: { landing: ToolLanding }) {
           </div>
         </div>
       </section>
+
+      <RelatedGuides currentSlug={landing.slug} />
 
       <AdSlot variant="banner" />
 
