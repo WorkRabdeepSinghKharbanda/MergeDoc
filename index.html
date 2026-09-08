@@ -1,6 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- PLACEHOLDER — replace G-XXXXXXXXXX with the real GA4 Measurement ID from
+         analytics.google.com before going live. Google's standard gtag.js snippet, loaded
+         unconditionally (no consent gate), per project convention — see ads.ts for the same
+         choice on AdSense and the compliance note in CLAUDE.md. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -8,6 +19,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="google-adsense-account" content="ca-pub-5852027898822024" />
+    <!-- PLACEHOLDER — replace with the real token from Search Console's "HTML tag" verification
+         method (URL-prefix property), search.google.com/search-console -->
+    <meta name="google-site-verification" content="REPLACE_WITH_SEARCH_CONSOLE_TOKEN" />
     <!-- Static in <head> so it's present on every route of this SPA on first load (per AdSense's
          own setup instructions), not just once React mounts. -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852027898822024" crossorigin="anonymous"></script>
