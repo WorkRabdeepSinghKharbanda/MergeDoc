@@ -1,4 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
+import AdSlot from '../components/AdSlot'
 import { useDocumentMeta, useJsonLd } from '../lib/useDocumentMeta'
 import { getPostBySlug } from '../lib/blog'
 import { markdownToHtml } from '../lib/markdown'
@@ -41,6 +42,8 @@ export default function BlogPost() {
         className="markdown-preview mt-8 text-slate-600 dark:text-slate-300"
         dangerouslySetInnerHTML={{ __html: markdownToHtml(post.content) }}
       />
+
+      <AdSlot variant="banner" />
     </article>
   )
 }

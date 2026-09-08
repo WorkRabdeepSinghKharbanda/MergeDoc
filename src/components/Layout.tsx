@@ -3,6 +3,9 @@ import NavHeader from './NavHeader'
 import ConsentBanner from './ConsentBanner'
 
 export default function Layout() {
+  // AdSense's loader script is a static <script> tag in index.html's <head> (present on every
+  // route of this SPA on first load), not injected from here — see ads.ts.
+
   return (
     <div className="flex min-h-screen flex-col overflow-x-hidden bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
       <NavHeader />

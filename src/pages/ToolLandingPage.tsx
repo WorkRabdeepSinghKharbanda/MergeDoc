@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import AdSlot from '../components/AdSlot'
 import { useDocumentMeta, useJsonLd } from '../lib/useDocumentMeta'
 import type { ToolLanding } from '../lib/toolLandings'
 
@@ -58,6 +59,8 @@ export default function ToolLandingPage({ landing }: { landing: ToolLanding }) {
           </div>
         </div>
       </section>
+
+      <AdSlot variant="banner" />
 
       <section className="border-t border-slate-100 bg-slate-50 py-16 dark:border-slate-900 dark:bg-slate-900">
         <div className="mx-auto max-w-3xl px-6">

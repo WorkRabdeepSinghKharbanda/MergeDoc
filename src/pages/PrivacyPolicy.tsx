@@ -37,7 +37,8 @@ export default function PrivacyPolicy() {
             <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-slate-900 dark:hover:text-slate-200">
               Google's Ad Settings
             </a>
-            . Ads only load after you accept the cookie-consent banner shown on your first visit.
+            . Ads may appear on any visit, regardless of the choice made in the cookie banner shown on your first
+            visit — that banner is a notice, not a control that blocks ads.
           </p>
         </section>
 

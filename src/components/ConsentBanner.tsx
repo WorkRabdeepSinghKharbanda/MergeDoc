@@ -1,21 +1,21 @@
 import { useState } from 'react'
 import { readStorage, writeStorage } from '../lib/storage'
-import { isAdsConfigured, loadAdsenseScript } from '../lib/ads'
+import { isAdsConfigured } from '../lib/ads'
 
 const STORAGE_KEY = 'mergedoc:ad-consent'
 
+/**
+ * Informational cookie notice — does not gate the ad script or ad slots (see AdSlot.tsx /
+ * Layout.tsx), it only records the visitor's acknowledgment/preference for display purposes.
+ */
 export default function ConsentBanner() {
   const [choice, setChoice] = useState<'accepted' | 'declined' | null>(() => readStorage<'accepted' | 'declined' | null>(STORAGE_KEY, null))
 
-  if (!isAdsConfigured() || choice !== null) {
-    if (choice === 'accepted') loadAdsenseScript()
-    return null
-  }
+  if (!isAdsConfigured() || choice !== null) return null
 
   function accept() {
     writeStorage(STORAGE_KEY, 'accepted')
     setChoice('accepted')
-    loadAdsenseScript()
   }
 
   function decline() {
