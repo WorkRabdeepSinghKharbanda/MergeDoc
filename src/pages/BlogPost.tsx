@@ -14,7 +14,7 @@ function PostView({ post }: { post: Post }) {
   const url = `${SITE_URL}/blog/${post.slug}`
   const category = categoryBySlug(post.category)
 
-  useDocumentMeta(`${post.title} | MergeDoc`, post.description, {
+  useDocumentMeta(post.title.length + 11 <= 60 ? `${post.title} | MergeDoc` : post.title, post.description, {
     type: 'article',
     publishedTime: post.date,
     modifiedTime: post.updated,

@@ -24,9 +24,9 @@ export const CATEGORIES: Category[] = [
     slug: 'pdf-tools',
     path: '/pdf-tools',
     title: 'PDF Tools',
-    metaTitle: 'Free Online PDF Tools — Merge, Split, Compress, Sign & More',
+    metaTitle: 'Free PDF Tools — Merge, Split, Compress, Sign & More',
     metaDescription:
-      'A full set of free, client-side PDF tools: merge, split, compress, rotate, watermark, protect, sign, fill forms, redact, and convert PDFs. No uploads, no accounts, no file size limits.',
+      'Free client-side PDF tools: merge, split, compress, rotate, watermark, protect, sign, fill forms, redact and convert. No uploads, no accounts, no limits.',
     intro:
       'Every PDF tool below runs entirely in your browser — your files are processed on your device and never uploaded to a server. That means no privacy risk, no waiting on an upload, and no arbitrary file-size caps from a backend. Pick a tool to get started.',
     faqs: [
@@ -45,9 +45,9 @@ export const CATEGORIES: Category[] = [
     slug: 'image-tools',
     path: '/image-tools',
     title: 'Image Tools',
-    metaTitle: 'Free Online Image Tools — Compress, Resize, Convert & More',
+    metaTitle: 'Free Image Tools — Compress, Resize, Convert & More',
     metaDescription:
-      'Compress, resize, convert, and analyze images free in your browser: image compressor, resizer, format converter, favicon generator, color blindness simulator, and color palette extractor.',
+      'Compress, resize and convert images free in your browser: compressor, resizer, format converter, favicon generator and color palette extractor.',
     intro:
       'These image tools resize, compress, convert, and analyze images entirely on your device using the canvas API — nothing is uploaded anywhere.',
     faqs: [
@@ -61,9 +61,9 @@ export const CATEGORIES: Category[] = [
     slug: 'text-writing-tools',
     path: '/text-tools',
     title: 'Text & Writing Tools',
-    metaTitle: 'Free Online Text Tools — Word Counter, Diff Checker, Markdown & More',
+    metaTitle: 'Free Text Tools — Word Counter, Diff Checker & More',
     metaDescription:
-      'Free text and writing tools: word counter, text diff checker, case converter, slug generator, readability checker, Markdown previewer, and word frequency analyzer.',
+      'Free text and writing tools: word counter, text diff checker, case converter, slug generator, readability checker and Markdown previewer.',
     intro:
       'Tools for writers and editors — count words, diff two texts, convert case, check readability, and preview Markdown, all processed locally as you type.',
     faqs: [
@@ -80,9 +80,9 @@ export const CATEGORIES: Category[] = [
     slug: 'developer-tools',
     path: '/developer-tools',
     title: 'Developer Tools',
-    metaTitle: 'Free Online Developer Tools — JSON, Regex, Base64, CSS Generators & More',
+    metaTitle: 'Free Developer Tools — JSON, Regex, Base64, CSS & More',
     metaDescription:
-      'Free developer tools that run entirely client-side: JSON formatter, regex tester, Base64/URL/HTML entity encoders, hash generator, UUID generator, CSS gradient/shadow/border-radius generators, and more.',
+      'Free developer tools that run client-side: JSON formatter, regex tester, Base64/URL encoders, hash and UUID generators, CSS gradient and shadow generators.',
     intro:
       'Everyday developer utilities — formatters, encoders, generators, and testers — with no server round-trip, so sensitive strings and payloads never leave your machine.',
     faqs: [
@@ -100,7 +100,7 @@ export const CATEGORIES: Category[] = [
     slug: 'qr-code-tools',
     path: '/qr-code-tools',
     title: 'QR Code Tools',
-    metaTitle: 'Free QR Code Generator & Scanner — Batch, vCard & More',
+    metaTitle: 'Free QR Code Generator & Scanner — Batch, vCard',
     metaDescription:
       'Generate QR codes for text, URLs, and contact cards, create batches of QR codes, or scan and decode a QR code from an image — all free and client-side.',
     intro:
@@ -115,7 +115,7 @@ export const CATEGORIES: Category[] = [
     slug: 'calculators',
     path: '/calculators',
     title: 'Calculators',
-    metaTitle: 'Free Online Calculators — BMI, Loan, Tip, Age, GPA & More',
+    metaTitle: 'Free Calculators — BMI, Loan, Tip, Age, GPA & More',
     metaDescription:
       'Free calculators for everyday math: BMI, percentage, tip, age, loan/EMI, discount, GPA, sales tax, and bill splitting — instant results, no sign-up.',
     intro:
@@ -132,7 +132,7 @@ export const CATEGORIES: Category[] = [
     slug: 'security-privacy-tools',
     path: '/security-tools',
     title: 'Security & Privacy Tools',
-    metaTitle: 'Free Online Security Tools — Password Generator, Text Encryptor & More',
+    metaTitle: 'Free Security Tools — Passwords, Text Encryption & More',
     metaDescription:
       'Generate strong passwords and passphrases, check password strength, and encrypt or decrypt text with AES-256-GCM — all processed locally, nothing transmitted.',
     intro:
@@ -147,7 +147,7 @@ export const CATEGORIES: Category[] = [
     slug: 'fun-productivity-tools',
     path: '/productivity-tools',
     title: 'Fun & Productivity Tools',
-    metaTitle: 'Free Productivity Tools — Pomodoro Timer, Todo List, Countdown & More',
+    metaTitle: 'Free Productivity Tools — Pomodoro, Todo, Countdown',
     metaDescription:
       'A pomodoro timer, todo list, scratchpad, countdown timer, decision wheel, dice roller, and more small tools to help you focus, decide, and get things done.',
     intro:
