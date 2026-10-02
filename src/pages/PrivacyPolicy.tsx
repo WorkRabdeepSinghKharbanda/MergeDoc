@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {
   return (
     <div className="mx-auto max-w-2xl px-6 py-16">
       <h1 className="text-3xl font-bold">Privacy Policy</h1>
-      <p className="mt-2 text-sm text-slate-400 dark:text-slate-500">Last updated: October 1, 2026</p>
+      <p className="mt-2 text-sm text-slate-400 dark:text-slate-500">Last updated: October 3, 2026</p>
 
       <div className="mt-8 space-y-6 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
         <section>
@@ -44,7 +44,16 @@ export default function PrivacyPolicy() {
 
         <section>
           <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Analytics</h2>
-          <p className="mt-2">MergeDoc does not currently use any analytics or tracking scripts beyond the advertising described above.</p>
+          <p className="mt-2">
+            MergeDoc uses Google Analytics (GA4) to count visits and see which pages are popular. It may set cookies
+            and collect anonymous usage data such as pages viewed, approximate location and device type. It never
+            sees the files or text you process, since those stay in your browser. Like advertising, analytics loads
+            regardless of the cookie banner choice. You can block it with a browser extension or Google's{' '}
+            <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="underline hover:text-slate-900 dark:hover:text-slate-200">
+              opt-out add-on
+            </a>
+            .
+          </p>
         </section>
 
         <section>
