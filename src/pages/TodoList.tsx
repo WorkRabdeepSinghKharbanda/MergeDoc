@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { readStorage, writeStorage } from '../lib/storage'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
 
@@ -7,7 +7,12 @@ const STORAGE_KEY = 'mergedoc:todo-list'
 
 export default function TodoList() {
   useDocumentMeta('Todo List Free Online | MergeDoc', 'A simple todo list that saves to your browser, entirely in your browser.')
-  const [tasks, setTasks] = useState<Task[]>(() => readStorage(STORAGE_KEY, []))
+  const [tasks, setTasks] = useState<Task[]>([])
+
+  // Read after mount so the server-rendered markup (empty list) matches the first client render.
+  useEffect(() => {
+    setTasks(readStorage<Task[]>(STORAGE_KEY, []))
+  }, [])
   const [input, setInput] = useState('')
 
   function persist(next: Task[]) {

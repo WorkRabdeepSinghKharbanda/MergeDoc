@@ -9,16 +9,19 @@ function todayPlus(days: number): string {
 
 export default function CountdownToDate() {
   useDocumentMeta('Countdown to Date Free Online | MergeDoc', 'Count down the days, hours, minutes, and seconds until any date, entirely in your browser.')
-  const [target, setTarget] = useState(() => todayPlus(30))
-  const [now, setNow] = useState(() => Date.now())
+  const [target, setTarget] = useState('')
+  const [now, setNow] = useState(0)
 
+  // Seeded after mount: the current date/time must not be baked in during prerender.
   useEffect(() => {
+    setTarget(todayPlus(30))
+    setNow(Date.now())
     const id = setInterval(() => setNow(Date.now()), 1000)
     return () => clearInterval(id)
   }, [])
 
-  const targetMs = new Date(`${target}T00:00:00`).getTime()
-  const diff = targetMs - now
+  const targetMs = target && now ? new Date(`${target}T00:00:00`).getTime() : 0
+  const diff = targetMs ? targetMs - now : 0
   const isPast = diff <= 0
   const abs = Math.abs(diff)
   const days = Math.floor(abs / 86400000)

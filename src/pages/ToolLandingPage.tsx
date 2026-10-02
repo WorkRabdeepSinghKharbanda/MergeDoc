@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom'
 import AdSlot from '../components/AdSlot'
 import RelatedGuides from '../components/RelatedGuides'
 import { useDocumentMeta, useJsonLd } from '../lib/useDocumentMeta'
+import Breadcrumbs from '../components/Breadcrumbs'
+import LinkCards from '../components/LinkCards'
+import { alternativesForTool, categoryForTool, postsForTool } from '../lib/links'
 import type { ToolLanding } from '../lib/toolLandings'
 
 export default function ToolLandingPage({ landing }: { landing: ToolLanding }) {
@@ -16,14 +19,13 @@ export default function ToolLandingPage({ landing }: { landing: ToolLanding }) {
     })),
   })
 
+  const category = categoryForTool(landing.toolPath)
+  const crumbs = [{ name: 'Home', to: '/' }, ...(category ? [{ name: category.title, to: category.path }] : []), { name: landing.h1 }]
+
   return (
     <div>
       <section className="mx-auto max-w-3xl px-6 pb-10 pt-16 text-center">
-        <nav className="mb-4 text-sm text-slate-400 dark:text-slate-500">
-          <Link to="/" className="hover:text-slate-600 dark:hover:text-slate-300">Home</Link>
-          <span className="mx-2">/</span>
-          <span>{landing.h1}</span>
-        </nav>
+        <Breadcrumbs items={crumbs} />
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">{landing.h1}</h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-500 dark:text-slate-400">{landing.intro}</p>
         <Link
@@ -60,6 +62,16 @@ export default function ToolLandingPage({ landing }: { landing: ToolLanding }) {
           </div>
         </div>
       </section>
+
+      <div className="mx-auto max-w-3xl px-6 pb-12">
+        <LinkCards
+          heading="Read more"
+          items={[
+            ...postsForTool(landing.toolPath).map((p) => ({ to: `/blog/${p.slug}`, title: p.title, note: p.description })),
+            ...alternativesForTool(landing.toolPath).map((a) => ({ to: a.path, title: `${a.competitor} alternative` })),
+          ]}
+        />
+      </div>
 
       <RelatedGuides currentSlug={landing.slug} />
 

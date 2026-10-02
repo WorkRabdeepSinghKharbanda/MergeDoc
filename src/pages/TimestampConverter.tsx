@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
 
 /** datetime-local expects local wall-clock time, not UTC — toISOString() would shift by the timezone offset. */
@@ -9,12 +9,19 @@ function toLocalDatetimeInput(date: Date): string {
 
 export default function TimestampConverter() {
   useDocumentMeta('Timestamp Converter Free Online | MergeDoc', 'Convert Unix epoch timestamps to human-readable dates and back, entirely in your browser.')
-  const [epoch, setEpoch] = useState(() => String(Math.floor(Date.now() / 1000)))
-  const [dateStr, setDateStr] = useState(() => toLocalDatetimeInput(new Date()))
+  const [epoch, setEpoch] = useState('')
+  const [dateStr, setDateStr] = useState('')
+
+  // Seeded after mount: Date.now() during render would differ between prerender and the browser.
+  useEffect(() => {
+    const now = new Date()
+    setEpoch(String(Math.floor(now.getTime() / 1000)))
+    setDateStr(toLocalDatetimeInput(now))
+  }, [])
 
   const fromEpoch = useMemo(() => {
     const n = Number(epoch)
-    if (Number.isNaN(n)) return null
+    if (epoch.trim() === '' || Number.isNaN(n)) return null
     return new Date(n * 1000)
   }, [epoch])
 

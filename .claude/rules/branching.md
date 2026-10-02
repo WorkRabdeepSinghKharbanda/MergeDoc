@@ -18,3 +18,5 @@ adding a batch of new posts/guides periodically rather than treating the current
 ## Feature brain
 
 Full feature/tool inventory lives at `.claude/brain/feature/` — one numbered file per tool (`001-{name}.md`, `002-{name}.md`, ...), with `000-index.md` as the entry point listing all of them. Read the index at the start of any new session before starting work, alongside CLAUDE.md. `src/lib/tools.ts` is still the code-level source of truth — if the brain disagrees, `tools.ts` wins and the brain should be regenerated to match.
+
+SEO keyword data and the new-content checklist live at `.claude/brain/seo/000-keyword-index.md` — read before adding posts/alternatives.

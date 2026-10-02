@@ -1,16 +1,25 @@
 import { useEffect, useState } from 'react'
 
-function getInitial(): boolean {
-  return document.documentElement.classList.contains('dark')
-}
-
 export default function ThemeToggle() {
-  const [dark, setDark] = useState(getInitial)
+  // The inline <head> script sets the real class before React mounts; adopt it after hydration
+  // (server render can't know it, so it starts light and the icon swaps on mount).
+  const [dark, setDark] = useState(false)
+  const [ready, setReady] = useState(false)
 
   useEffect(() => {
+    setDark(document.documentElement.classList.contains('dark'))
+    setReady(true)
+  }, [])
+
+  useEffect(() => {
+    if (!ready) return
     document.documentElement.classList.toggle('dark', dark)
-    localStorage.setItem('theme', dark ? 'dark' : 'light')
-  }, [dark])
+    try {
+      localStorage.setItem('theme', dark ? 'dark' : 'light')
+    } catch {
+      // storage unavailable — theme just won't persist
+    }
+  }, [dark, ready])
 
   return (
     <button

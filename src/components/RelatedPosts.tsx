@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import { BLOG_POSTS } from '../lib/blog'
 
-/** Next 3 posts after the current one, wrapping around — more pageviews per session. */
+/** 3 related posts: same category first, then the rest in order — more pageviews per session. */
 export default function RelatedPosts({ currentSlug }: { currentSlug: string }) {
-  const index = BLOG_POSTS.findIndex((p) => p.slug === currentSlug)
-  if (index === -1) return null
+  const current = BLOG_POSTS.find((p) => p.slug === currentSlug)
+  if (!current) return null
 
-  const related = Array.from({ length: 3 }, (_, i) => BLOG_POSTS[(index + i + 1) % BLOG_POSTS.length])
+  const others = BLOG_POSTS.filter((p) => p.slug !== currentSlug)
+  const related = [...others.filter((p) => p.category === current.category), ...others.filter((p) => p.category !== current.category)].slice(0, 3)
 
   return (
     <section className="mt-16 border-t border-slate-100 pt-10 dark:border-slate-900">

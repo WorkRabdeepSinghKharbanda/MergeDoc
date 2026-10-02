@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom'
 import AdSlot from '../components/AdSlot'
 import ToolCard from '../components/ToolCard'
 import { useDocumentMeta, useJsonLd } from '../lib/useDocumentMeta'
+import Breadcrumbs from '../components/Breadcrumbs'
+import LinkCards from '../components/LinkCards'
 import { toolsForCategory, type Category } from '../lib/categories'
+import { alternativesForCategory, postsForCategory } from '../lib/links'
 
 function Icon({ path }: { path: string }) {
   return (
@@ -29,11 +31,7 @@ export default function CategoryPage({ category }: { category: Category }) {
   return (
     <div>
       <section className="mx-auto max-w-4xl px-6 pb-10 pt-16 text-center">
-        <nav className="mb-4 text-sm text-slate-400 dark:text-slate-500">
-          <Link to="/" className="hover:text-slate-600 dark:hover:text-slate-300">Home</Link>
-          <span className="mx-2">/</span>
-          <span>{category.title}</span>
-        </nav>
+        <Breadcrumbs items={[{ name: 'Home', to: '/' }, { name: category.title }]} />
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">{category.title}</h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-500 dark:text-slate-400">{category.intro}</p>
       </section>
@@ -47,6 +45,18 @@ export default function CategoryPage({ category }: { category: Category }) {
           ))}
         </div>
       </section>
+
+      <div className="mx-auto max-w-5xl px-6 pb-16">
+        <LinkCards
+          heading="Guides & articles"
+          items={postsForCategory(category.slug).map((p) => ({ to: `/blog/${p.slug}`, title: p.title, note: p.description }))}
+        />
+        <LinkCards
+          className="mt-10"
+          heading="Compare alternatives"
+          items={alternativesForCategory(category).map((a) => ({ to: a.path, title: `${a.competitor} alternative` }))}
+        />
+      </div>
 
       <section className="border-t border-slate-100 bg-slate-50 py-16 dark:border-slate-900 dark:bg-slate-900">
         <div className="mx-auto max-w-3xl px-6">

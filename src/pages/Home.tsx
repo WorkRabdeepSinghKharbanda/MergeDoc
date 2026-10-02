@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
 import AdSlot from '../components/AdSlot'
+import LinkCards from '../components/LinkCards'
+import { BLOG_POSTS } from '../lib/blog'
+import { ALTERNATIVES } from '../lib/alternatives'
 import ToolCard from '../components/ToolCard'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
 import { PDF_TOOLS } from '../lib/tools'
@@ -86,6 +89,20 @@ export default function Home() {
           </div>
         </section>
       ))}
+
+      <div className="mx-auto max-w-5xl px-6 pb-16">
+        <LinkCards
+          heading="From the blog"
+          items={BLOG_POSTS.slice(0, 6).map((p) => ({ to: `/blog/${p.slug}`, title: p.title, note: p.description }))}
+        />
+        <p className="mt-4 text-sm"><Link to="/blog" className="text-indigo-600 hover:underline dark:text-indigo-400">All articles &rarr;</Link></p>
+        <LinkCards
+          className="mt-12"
+          heading="Switching from another tool?"
+          items={ALTERNATIVES.slice(0, 6).map((a) => ({ to: a.path, title: `${a.competitor} alternative` }))}
+        />
+        <p className="mt-4 text-sm"><Link to="/alternatives" className="text-indigo-600 hover:underline dark:text-indigo-400">All comparisons &rarr;</Link></p>
+      </div>
 
       <section className="border-t border-slate-100 bg-slate-50 py-16 dark:border-slate-900 dark:bg-slate-900">
         <div className="mx-auto max-w-4xl px-6 text-center">

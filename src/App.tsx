@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { ToastProvider } from './components/ToastProvider'
 import Layout from './components/Layout'
 import Home from './pages/Home'
@@ -95,12 +95,14 @@ import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import ToolLandingPage from './pages/ToolLandingPage'
 import { TOOL_LANDINGS } from './lib/toolLandings'
+import Alternatives from './pages/Alternatives'
+import AlternativePage from './pages/AlternativePage'
+import { ALTERNATIVES } from './lib/alternatives'
 
 export default function App() {
   return (
     <ToastProvider>
-      <BrowserRouter>
-        <Routes>
+      <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/merge" element={<Merge />} />
@@ -192,6 +194,10 @@ export default function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/alternatives" element={<Alternatives />} />
+            {ALTERNATIVES.map((alt) => (
+              <Route key={alt.path} path={alt.path} element={<AlternativePage alt={alt} />} />
+            ))}
             {CATEGORIES.map((category) => (
               <Route key={category.path} path={category.path} element={<CategoryPage category={category} />} />
             ))}
@@ -199,8 +205,7 @@ export default function App() {
               <Route key={landing.path} path={landing.path} element={<ToolLandingPage landing={landing} />} />
             ))}
           </Route>
-        </Routes>
-      </BrowserRouter>
+      </Routes>
     </ToastProvider>
   )
 }

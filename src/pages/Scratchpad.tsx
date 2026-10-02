@@ -6,16 +6,24 @@ const STORAGE_KEY = 'mergedoc:scratchpad'
 
 export default function Scratchpad() {
   useDocumentMeta('Scratchpad Free Online | MergeDoc', 'A notepad that autosaves to your browser, entirely in your browser.')
-  const [text, setText] = useState(() => readStorage(STORAGE_KEY, ''))
+  const [text, setText] = useState('')
+  const [loaded, setLoaded] = useState(false)
   const [savedAt, setSavedAt] = useState<Date | null>(null)
 
+  // Read after mount so the server-rendered markup (empty) matches the first client render.
   useEffect(() => {
+    setText(readStorage(STORAGE_KEY, ''))
+    setLoaded(true)
+  }, [])
+
+  useEffect(() => {
+    if (!loaded) return
     const id = setTimeout(() => {
       writeStorage(STORAGE_KEY, text)
       setSavedAt(new Date())
     }, 400)
     return () => clearTimeout(id)
-  }, [text])
+  }, [text, loaded])
 
   return (
     <div className="mx-auto max-w-2xl px-6 py-16">

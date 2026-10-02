@@ -17,22 +17,46 @@ MergeDoc is a single-page web app offering 86 tools across PDF editing, image pr
 
 ## Blog
 
-- [How to Merge PDF Files Without Uploading Them Anywhere](https://mergedoc.vercel.app/blog/merge-pdf-without-uploading)
-- [5 Ways to Reduce a PDF's File Size](https://mergedoc.vercel.app/blog/reduce-pdf-file-size)
-- [How to Password Protect a PDF (and Remove a Password Later)](https://mergedoc.vercel.app/blog/password-protect-pdf-guide)
-- [QR Codes 101: Static vs Dynamic, and When to Use Each](https://mergedoc.vercel.app/blog/qr-codes-static-vs-dynamic)
-- [AES-256 Explained: How MergeDoc Encrypts Your Text Client-Side](https://mergedoc.vercel.app/blog/aes-256-text-encryption-explained)
-- [The Case for Client-Side Tools: Why Your Files Shouldn't Have to Leave Your Browser](https://mergedoc.vercel.app/blog/why-client-side-tools-matter)
-- [How to Resize an Image Without Losing Quality](https://mergedoc.vercel.app/blog/resize-image-without-losing-quality)
-- [JSON Formatting 101: Why Minified JSON Breaks Debugging](https://mergedoc.vercel.app/blog/minified-json-debugging)
-- [Regex Basics: How to Actually Test a Pattern Before Using It](https://mergedoc.vercel.app/blog/how-to-test-a-regex)
-- [UUIDs Explained: Why v4 Is Random, Not Sequential](https://mergedoc.vercel.app/blog/uuid-v4-explained)
-- [The Loan/EMI Formula Behind Every Amortization Calculator](https://mergedoc.vercel.app/blog/loan-emi-formula-explained)
-- [Base64 Encoding: What It's For (and What It Isn't)](https://mergedoc.vercel.app/blog/base64-encoding-what-its-for)
-- [Flesch Reading Ease: What Your Readability Score Actually Means](https://mergedoc.vercel.app/blog/flesch-reading-ease-explained)
-- [Color Contrast and WCAG: Why Some Text Combinations Fail Accessibility](https://mergedoc.vercel.app/blog/wcag-color-contrast-explained)
-- [The Pomodoro Technique: Why 25 Minutes Works](https://mergedoc.vercel.app/blog/pomodoro-technique-why-25-minutes)
-- [CSV vs JSON: When to Use Each Format](https://mergedoc.vercel.app/blog/csv-vs-json-when-to-use-each)
+- [AES-256 Text Encryption Explained in Plain English](https://mergedoc.vercel.app/blog/aes-256-text-encryption-explained): How AES-256-GCM and PBKDF2 turn a passphrase and a message into safe ciphertext in your browser, and what that protects against.
+- [Base64 Encoding: What It Does and Why It Is Not Security](https://mergedoc.vercel.app/blog/base64-encoding-what-its-for): Base64 turns binary data into plain text so it can travel through text-only systems. It protects nothing. Here is how it works and when to use it.
+- [Compare Two PDFs and Find Every Changed Word](https://mergedoc.vercel.app/blog/compare-two-pdfs-find-differences): Compare two PDFs for differences in your browser. See added and removed words highlighted, and learn what a text diff can and cannot catch.
+- [Compress Images for Faster Websites: A Practical Guide](https://mergedoc.vercel.app/blog/compress-images-for-faster-websites): Resize first, then compress, then pick the right format. A practical workflow for smaller JPG, PNG and WebP images, done free in your browser.
+- [How to Create a Freelance Invoice as a PDF, Free](https://mergedoc.vercel.app/blog/create-a-freelance-invoice): What a freelance invoice should include, how to add sales tax correctly, and how to make a clean invoice PDF free in your browser. Not tax or legal advice.
+- [CSS Gradients, Shadows and Border Radius, Explained](https://mergedoc.vercel.app/blog/css-gradients-shadows-border-radius-guide): Learn the syntax behind linear-gradient, box-shadow and border-radius, with the values to start from and free generators to preview and copy the CSS.
+- [CSV vs JSON: When to Use Each Format (and How to Convert)](https://mergedoc.vercel.app/blog/csv-vs-json-when-to-use-each): CSV and JSON solve different problems. Learn which fits your data, where each breaks down, and how to convert between them without losing information.
+- [Flesch Reading Ease Score: What the Number Means](https://mergedoc.vercel.app/blog/flesch-reading-ease-explained): How the Flesch Reading Ease formula works, what each score range means, how to improve a low score, and why a readability number is only a rough guide.
+- [How to Test a Regex Online Before You Ship It](https://mergedoc.vercel.app/blog/how-to-test-a-regex): A regex that looks right can still match too much, too little, or hang. Test it against real inputs in your browser before it reaches production.
+- [Is It Safe to Upload Confidential PDFs to Online Tools?](https://mergedoc.vercel.app/blog/is-it-safe-to-upload-confidential-pdfs): What happens to a PDF you upload to a free online tool, which risks are real, and how to process contracts and IDs without uploading them at all.
+- [Loan EMI Formula Explained, With a Worked Example](https://mergedoc.vercel.app/blog/loan-emi-formula-explained): How the monthly payment formula works, why a longer term cuts the payment but raises total interest, and how to check your own numbers in a calculator.
+- [Merge PDF Files Without Uploading Them Anywhere](https://mergedoc.vercel.app/blog/merge-pdf-without-uploading): Combine several PDFs into one in your browser. No upload, no sign-up, no watermark, no file-size cap set by a server.
+- [Why Minified JSON Is Hard to Debug (and How to Fix It)](https://mergedoc.vercel.app/blog/minified-json-debugging): Minified JSON is great for machines and painful for people. Learn to format, validate and minify JSON, and spot the usual syntax errors fast.
+- [How to Password Protect a PDF (and Remove It Later)](https://mergedoc.vercel.app/blog/password-protect-pdf-guide): Add or remove a PDF password in your browser, and learn what encryption protects, what it does not, and how to choose a strong password.
+- [The Pomodoro Technique: Why 25 Minutes Works](https://mergedoc.vercel.app/blog/pomodoro-technique-why-25-minutes): Why the Pomodoro Technique uses 25-minute focus blocks and 5-minute breaks, how to run a session step by step, and when to adjust the timing.
+- [Static vs Dynamic QR Codes: Which One Do You Need?](https://mergedoc.vercel.app/blog/qr-codes-static-vs-dynamic): How static and dynamic QR codes differ, what each costs you over time, and how to choose before you print anything.
+- [How to Reduce a PDF's File Size: What Works and What Doesn't](https://mergedoc.vercel.app/blog/reduce-pdf-file-size): Why PDFs get large, which fixes actually shrink them, and an honest look at what a browser-based compressor can and cannot do.
+- [How to Resize an Image Without Losing Quality](https://mergedoc.vercel.app/blog/resize-image-without-losing-quality): What actually causes quality loss when you resize, why shrinking is safe and enlarging is not, and how to get a smaller file too.
+- [Rotate and Reorder PDF Pages Permanently, Free](https://mergedoc.vercel.app/blog/rotate-and-reorder-pdf-pages): Fix sideways scans and out-of-order pages. Rotate a PDF by 90, 180 or 270 degrees and rearrange or delete pages, all in your browser, with no upload.
+- [SHA-256 Hash Explained: What It Is and When to Use It](https://mergedoc.vercel.app/blog/sha-256-hash-explained): What a SHA-256 hash is, why one changed letter changes everything, how it differs from encryption, and how to generate SHA hashes free in your browser.
+- [How to Split a PDF Into Pages, Ranges or Single Files](https://mergedoc.vercel.app/blog/split-pdf-into-pages-guide): Split a PDF into single pages or pull out ranges like 1-3,5, free and in your browser. Learn which tool fits, plus the limits worth knowing.
+- [Strong Passwords vs Passphrases: Which Should You Use?](https://mergedoc.vercel.app/blog/strong-passwords-vs-passphrases): Random passwords or multi-word passphrases? Learn how entropy works, how long is long enough, and the limits of our own generator and strength meter.
+- [Unix Timestamps Explained: Epoch Time to Date and Back](https://mergedoc.vercel.app/blog/unix-timestamp-explained): What a Unix timestamp is, why it starts in 1970, seconds versus milliseconds, time zones, and the 2038 problem. Convert epoch time free in your browser.
+- [UUID v4 Explained: How Random IDs Avoid Collisions](https://mergedoc.vercel.app/blog/uuid-v4-explained): What a UUID guarantees, why version 4 is the common default, how unlikely a collision really is, and when a UUID is the wrong choice for your database.
+- [WCAG Color Contrast Ratio Explained: AA vs AAA](https://mergedoc.vercel.app/blog/wcag-color-contrast-explained): What a contrast ratio measures, the 4.5:1, 3:1 and 7:1 WCAG thresholds, and how to check a color pair so light gray text does not fail accessibility.
+- [Why Client-Side Tools Matter: Keep Files on Your Device](https://mergedoc.vercel.app/blog/why-client-side-tools-matter): Most online file tools upload your data to a server. Here is why many tasks do not need that, and the honest trade-offs of doing it locally.
+
+## Alternatives (comparisons with other online tools)
+
+- [All comparisons](https://mergedoc.vercel.app/alternatives)
+- [Adobe Acrobat Online Alternative, Free](https://mergedoc.vercel.app/alternatives/adobe-acrobat-online-alternative): Need an Adobe Acrobat online alternative? Fill forms, sign, protect and compare PDFs in your browser with no upload or sign-in. Compare features here.
+- [Diffchecker Alternative: Private Text Diff](https://mergedoc.vercel.app/alternatives/diffchecker-alternative): A Diffchecker alternative that compares text and PDFs in your browser. Nothing is uploaded or saved, no account is needed. See what each tool does best.
+- [iLovePDF Alternative: Free, No Upload](https://mergedoc.vercel.app/alternatives/ilovepdf-alternative): Looking for an iLovePDF alternative? MergeDoc merges, splits, rotates and compresses PDFs in your browser. No upload, no sign-up, no watermark.
+- [JSONLint Alternative: Private JSON Validator](https://mergedoc.vercel.app/alternatives/jsonlint-alternative): A JSONLint alternative that validates, formats and minifies JSON in your browser. Nothing is sent anywhere, so API responses and configs stay private.
+- [PDF24 Alternative: Private PDF Tools Online](https://mergedoc.vercel.app/alternatives/pdf24-alternative): A PDF24 alternative that needs no install and no upload. Merge PDFs and convert PDF to image or image to PDF entirely in your browser, free.
+- [QR Code Monkey Alternative, Free](https://mergedoc.vercel.app/alternatives/qr-code-monkey-alternative): A QR Code Monkey alternative for plain, static QR codes. Generate, batch, scan and make vCard QR codes in your browser with no account or tracking.
+- [Regex101 Alternative: Simple Regex Tester](https://mergedoc.vercel.app/alternatives/regex101-alternative): Need a lightweight Regex101 alternative? Test JavaScript regular expressions with live match highlighting in your browser. No account, nothing saved.
+- [Sejda Alternative: Free PDF Tools in Browser](https://mergedoc.vercel.app/alternatives/sejda-alternative): Want a Sejda alternative? MergeDoc merges, reorders, crops and fills PDF forms entirely in your browser. No upload, no account, no watermark.
+- [Smallpdf Alternative: Free, Private PDF Tools](https://mergedoc.vercel.app/alternatives/smallpdf-alternative): A free Smallpdf alternative that runs in your browser. Merge, protect, sign and tidy PDFs with no upload and no account. See where Smallpdf still wins.
+- [TinyPNG Alternative: Compress Images Locally](https://mergedoc.vercel.app/alternatives/tinypng-alternative): A TinyPNG alternative that compresses and resizes images in your browser. No upload, no account. See where TinyPNG compression still gives better results.
 
 ## All tools
 

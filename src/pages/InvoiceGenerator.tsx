@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useToast } from '../components/ToastProvider'
 import { downloadBlob, generateInvoicePdf, type InvoiceItem } from '../lib/pdf'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
@@ -7,13 +7,17 @@ export default function InvoiceGenerator() {
   useDocumentMeta('Invoice Generator Free Online | MergeDoc', 'Create a simple invoice PDF from a form, entirely in your browser.')
   const toast = useToast()
   const [invoiceNumber, setInvoiceNumber] = useState('INV-001')
-  const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10))
+  const [date, setDate] = useState('')
   const [fromName, setFromName] = useState('')
   const [toName, setToName] = useState('')
   const [taxPercent, setTaxPercent] = useState(0)
   const [notes, setNotes] = useState('')
   const [items, setItems] = useState<InvoiceItem[]>([{ description: '', quantity: 1, price: 0 }])
   const [busy, setBusy] = useState(false)
+
+  useEffect(() => {
+    setDate(new Date().toISOString().slice(0, 10))
+  }, [])
 
   function updateItem(index: number, field: keyof InvoiceItem, value: string | number) {
     setItems((prev) => prev.map((item, i) => (i === index ? { ...item, [field]: value } : item)))

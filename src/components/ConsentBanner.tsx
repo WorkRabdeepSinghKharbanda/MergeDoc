@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { readStorage, writeStorage } from '../lib/storage'
 import { isAdsConfigured } from '../lib/ads'
 
@@ -9,9 +9,16 @@ const STORAGE_KEY = 'mergedoc:ad-consent'
  * Layout.tsx), it only records the visitor's acknowledgment/preference for display purposes.
  */
 export default function ConsentBanner() {
-  const [choice, setChoice] = useState<'accepted' | 'declined' | null>(() => readStorage<'accepted' | 'declined' | null>(STORAGE_KEY, null))
+  // Start hidden and decide after mount: prerendered HTML can't know whether this visitor already chose.
+  const [choice, setChoice] = useState<'accepted' | 'declined' | null>(null)
+  const [checked, setChecked] = useState(false)
 
-  if (!isAdsConfigured() || choice !== null) return null
+  useEffect(() => {
+    setChoice(readStorage<'accepted' | 'declined' | null>(STORAGE_KEY, null))
+    setChecked(true)
+  }, [])
+
+  if (!isAdsConfigured() || !checked || choice !== null) return null
 
   function accept() {
     writeStorage(STORAGE_KEY, 'accepted')

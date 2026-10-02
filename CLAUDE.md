@@ -82,3 +82,11 @@ Everything runs in the browser — there is no backend/API.
 ### compress caveat
 
 `compressPdf` in `src/lib/pdf.ts` only re-serializes with `useObjectStreams: true` (structural dedup of fonts/streams). It does not rasterize/re-encode images, so it won't meaningfully shrink image-heavy PDFs. A real size-reduction pipeline would reuse `renderPagesToImages` from `src/lib/pdfjs.ts` to rasterize pages and re-encode as JPEG, then rebuild the PDF from those images.
+
+
+## SEO / prerender (SSG)
+
+- Build is `tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs`. The script renders every route from `prerenderRoutes()` (`src/lib/routes.ts`) with `StaticRouter` + `renderToString`, swaps title/description/canonical/OG/Twitter into the `dist/index.html` template, appends per-route JSON-LD (`data-ssr`, removed on client mount), writes `dist/<route>.html`, and generates `dist/sitemap.xml` (no hand-maintained sitemap; `public/sitemap.xml` is gone). `vercel.json` has `cleanUrls: true`. Client uses `hydrateRoot` when `#root` has children. Router wrapper lives in `main.tsx` / `entry-server.tsx`, not `App.tsx`.
+- Hydration rule: no `document`/`localStorage`/`Date.now()` in render or `useState` initializers — read them in `useEffect`.
+- `useDocumentMeta(title, desc, {type, publishedTime, modifiedTime})` + `useJsonLd` push to an SSR collector during render. Every routed page MUST call `useDocumentMeta` (prerender throws otherwise).
+- Content: blog posts in `src/lib/posts/*.ts` (aggregated in `blog.ts`), alternatives in `src/lib/alternatives.ts` (`/alternatives`, `/alternatives/<slug>`), cross-links in `src/lib/links.ts`. Keyword data + content checklist: `.claude/brain/seo/000-keyword-index.md`.
